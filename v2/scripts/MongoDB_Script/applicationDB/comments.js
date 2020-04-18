@@ -15,6 +15,14 @@ db.createCollection( "comments",{
                     "bsonType": "objectId",
                     "description": "Automatically generated object_id as primary key."
                 },
+                "createdAt": {
+                    "bsonType": "date",
+                    "description": "Timestamp with the comment's creation date"
+                },
+                "updatedAt": {
+                    "bsonType": "date",
+                    "description": "Timestamp with the comment's last update date"
+                },
                 "authorId": {
                     "bsonType": "objectId",
                     "description": "Id of the user who created the comment."
@@ -39,23 +47,15 @@ db.createCollection( "comments",{
                         "bsonType": "objectId",
                         "description": "_id of the user who liked the comment"
                     }
-                },
-                "createdAt": {
-                    "bsonType": "date",
-                    "description": "Timestamp with the comment's creation date"
-                },
-                "updatedAt": {
-                    "bsonType": "date",
-                    "description": "Timestamp with the comment's last update date"
                 }
             },
             "required": [
                 "_id",
+                "createdAt",
+                "updatedAt",
                 "authorId",
                 "postId",
-                "content",
-                "createdAt",
-                "updatedAt"
+                "content"
             ]
         }
     },

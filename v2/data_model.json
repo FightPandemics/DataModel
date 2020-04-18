@@ -2,12 +2,12 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "",
-    "lastModifTS": "2020-04-18T05:37:14.840Z",
+    "lastModifTS": "2020-04-18T15:28:05.378Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
     "author": "",
-    "version": "v2",
+    "version": "2",
     "collections": [
         {
             "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
@@ -41,6 +41,54 @@
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {}
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "11110b10-7fb1-11ea-ba73-c97a35e85484",
+                    "name": "createdAt",
+                    "code": "",
+                    "description": "Timestamp with the comment's creation date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "19aba640-7fb1-11ea-ba73-c97a35e85484",
+                    "name": "updatedAt",
+                    "code": "",
+                    "description": "Timestamp with the comment's last update date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
                 },
                 {
                     "code": "",
@@ -176,54 +224,6 @@
                     "comments": "",
                     "dependencies": [],
                     "required": false,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    }
-                },
-                {
-                    "type": "date",
-                    "primaryKey": false,
-                    "relationshipType": "",
-                    "parentRelationship": "",
-                    "childRelationships": [],
-                    "foreignCollection": "",
-                    "foreignField": [],
-                    "default": "",
-                    "format": "",
-                    "sample": "",
-                    "GUID": "11110b10-7fb1-11ea-ba73-c97a35e85484",
-                    "name": "createdAt",
-                    "code": "",
-                    "description": "Timestamp with the comment's creation date",
-                    "comments": "",
-                    "dependencies": [],
-                    "required": true,
-                    "id": "",
-                    "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    }
-                },
-                {
-                    "type": "date",
-                    "primaryKey": false,
-                    "relationshipType": "",
-                    "parentRelationship": "",
-                    "childRelationships": [],
-                    "foreignCollection": "",
-                    "foreignField": [],
-                    "default": "",
-                    "format": "",
-                    "sample": "",
-                    "GUID": "19aba640-7fb1-11ea-ba73-c97a35e85484",
-                    "name": "updatedAt",
-                    "code": "",
-                    "description": "Timestamp with the comment's last update date",
-                    "comments": "",
-                    "dependencies": [],
-                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
                     "error": {
@@ -1705,6 +1705,76 @@
                     "error": {}
                 },
                 {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "65df2350-8184-11ea-9e2e-c5ef5a601426",
+                    "name": "createdAt",
+                    "code": "",
+                    "description": "Timestamp with the comment's creation date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "6af0e5e0-8184-11ea-9e2e-c5ef5a601426",
+                    "name": "updatedAt",
+                    "code": "",
+                    "description": "Timestamp with the comment's last update date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "5cd376d0-8184-11ea-9e2e-c5ef5a601426",
+                    "name": "createdAt",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
                     "type": "objectId",
                     "format": "",
                     "primaryKey": false,
@@ -2464,8 +2534,6 @@
         "bd363740-7fb0-11ea-ba73-c97a35e85484": "type",
         "bd34fec0-7fb0-11ea-ba73-c97a35e85484": "comments",
         "e5c2c520-7fb0-11ea-ba73-c97a35e85484": "_id",
-        "11110b10-7fb1-11ea-ba73-c97a35e85484": "createdAt",
-        "19aba640-7fb1-11ea-ba73-c97a35e85484": "updatedAt",
         "d3377f30-7fb1-11ea-ba73-c97a35e85484": "Location.js",
         "e9a11b50-7fb1-11ea-ba73-c97a35e85484": "Location.js(1)",
         "fee45fe0-7fb1-11ea-ba73-c97a35e85484": "Organization.js",
@@ -2557,7 +2625,12 @@
         "b4066f90-8132-11ea-a764-5d61b98a5ce8": "ownerId",
         "c794b120-8132-11ea-a764-5d61b98a5ce8": "UserOwnsOrganization",
         "56d2cde0-7fb7-11ea-b6ca-71d27d0acee3": "type",
-        "e3b342c0-8134-11ea-a764-5d61b98a5ce8": "address"
+        "e3b342c0-8134-11ea-a764-5d61b98a5ce8": "address",
+        "11110b10-7fb1-11ea-ba73-c97a35e85484": "createdAt",
+        "19aba640-7fb1-11ea-ba73-c97a35e85484": "updatedAt",
+        "5cd376d0-8184-11ea-9e2e-c5ef5a601426": "createdAt",
+        "65df2350-8184-11ea-9e2e-c5ef5a601426": "createdAt",
+        "6af0e5e0-8184-11ea-9e2e-c5ef5a601426": "updatedAt"
     },
     "definitions": {
         "type": "definitions",
@@ -3461,10 +3534,10 @@
                 "erd": [
                     {
                         "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                        "x": 597.1022875217103,
-                        "y": 401.1752326866662,
-                        "width": 299,
-                        "height": 175,
+                        "x": 859.6204559737159,
+                        "y": 171.1793434677146,
+                        "width": 244,
+                        "height": 142,
                         "color": {
                             "hsl": {
                                 "h": 187.04225352112678,
@@ -3491,8 +3564,8 @@
                     },
                     {
                         "GUID": "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 292.5708551410486,
-                        "y": 780.9994451088555,
+                        "x": 573.7688927681978,
+                        "y": 435.4218653687039,
                         "width": 244,
                         "height": 240,
                         "color": {
@@ -3521,8 +3594,8 @@
                     },
                     {
                         "GUID": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 215.54461108324836,
-                        "y": 361.9096197206037,
+                        "x": 527.0974361200052,
+                        "y": 120.23881226718751,
                         "width": 244,
                         "height": 212,
                         "color": {
@@ -3551,10 +3624,10 @@
                     },
                     {
                         "GUID": "68a89cd0-8132-11ea-a764-5d61b98a5ce8",
-                        "x": 221.06491947755774,
+                        "x": 222.06491947755774,
                         "y": 110,
                         "width": 244,
-                        "height": 225,
+                        "height": 253,
                         "color": {
                             "hsl": {
                                 "h": 290.8029197080292,
@@ -3592,7 +3665,7 @@
                         "GUID": "d93b54d0-7faf-11ea-ba73-c97a35e85484"
                     },
                     {
-                        "x": 175.54461108324836,
+                        "x": 182.06491947755774,
                         "y": 70,
                         "GUID": "bd396b90-7fb0-11ea-ba73-c97a35e85484"
                     },
@@ -3628,7 +3701,6 @@
                     "fede938b-7fb1-11ea-ba73-c97a35e85484",
                     "9693b430-7fb2-11ea-ba73-c97a35e85484",
                     "78ded9c0-8132-11ea-a764-5d61b98a5ce8",
-                    "78ded9cb-8132-11ea-a764-5d61b98a5ce8",
                     "78deb2b5-8132-11ea-a764-5d61b98a5ce8",
                     "4a8675d0-80ea-11ea-a764-5d61b98a5ce8",
                     "efa3c380-80e3-11ea-a764-5d61b98a5ce8",
@@ -3640,7 +3712,9 @@
                     "9693b434-7fb2-11ea-ba73-c97a35e85484",
                     "56741420-810c-11ea-a764-5d61b98a5ce8",
                     "e2868490-811e-11ea-a764-5d61b98a5ce8",
-                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
+                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8",
+                    "deadb930-8108-11ea-a764-5d61b98a5ce8",
+                    "78ded9cb-8132-11ea-a764-5d61b98a5ce8"
                 ],
                 "activeRelationship": "",
                 "selectedCollections": [],

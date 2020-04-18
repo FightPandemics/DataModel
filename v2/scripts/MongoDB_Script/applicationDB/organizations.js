@@ -15,6 +15,13 @@ db.createCollection( "organizations",{
                     "bsonType": "objectId",
                     "description": "Automatically generated _id."
                 },
+                "createdAt": {
+                    "bsonType": "date"
+                },
+                "updatedAt": {
+                    "bsonType": "date",
+                    "description": "Timestamp with the comment's last update date"
+                },
                 "ownerId": {
                     "bsonType": "objectId",
                     "description": "_id of the user who owns the organization."
@@ -177,6 +184,7 @@ db.createCollection( "organizations",{
             },
             "required": [
                 "_id",
+                "updatedAt",
                 "ownerId",
                 "name",
                 "email",

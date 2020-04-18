@@ -9,6 +9,16 @@
             "description": "Automatically generated object_id as primary key.",
             "pattern": "^[a-fA-F0-9]{24}$"
         },
+        "createdAt": {
+            "type": "string",
+            "description": "Timestamp with the comment's creation date",
+            "format": "date-time"
+        },
+        "updatedAt": {
+            "type": "string",
+            "description": "Timestamp with the comment's last update date",
+            "format": "date-time"
+        },
         "authorId": {
             "type": "string",
             "description": "Id of the user who created the comment.",
@@ -37,24 +47,14 @@
                 "description": "_id of the user who liked the comment",
                 "pattern": "^[a-fA-F0-9]{24}$"
             }
-        },
-        "createdAt": {
-            "type": "string",
-            "description": "Timestamp with the comment's creation date",
-            "format": "date-time"
-        },
-        "updatedAt": {
-            "type": "string",
-            "description": "Timestamp with the comment's last update date",
-            "format": "date-time"
         }
     },
     "required": [
         "_id",
+        "createdAt",
+        "updatedAt",
         "authorId",
         "postId",
-        "content",
-        "createdAt",
-        "updatedAt"
+        "content"
     ]
 }

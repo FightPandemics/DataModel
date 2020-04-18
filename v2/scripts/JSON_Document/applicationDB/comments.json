@@ -1,12 +1,12 @@
 {
     "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
     "authorId": ObjectId("507f1f77bcf86cd799439011"),
     "postId": ObjectId("507f1f77bcf86cd799439011"),
     "parentId": ObjectId("507f1f77bcf86cd799439011"),
     "content": "Lorem",
     "likes": [
         ObjectId("507f1f77bcf86cd799439011")
-    ],
-    "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
-    "updatedAt": ISODate("2016-04-08T15:06:21.595Z")
+    ]
 }

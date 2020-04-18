@@ -9,6 +9,15 @@
             "description": "Automatically generated _id.",
             "pattern": "^[a-fA-F0-9]{24}$"
         },
+        "createdAt": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "updatedAt": {
+            "type": "string",
+            "description": "Timestamp with the comment's last update date",
+            "format": "date-time"
+        },
         "ownerId": {
             "type": "string",
             "description": "_id of the user who owns the organization.",
@@ -188,6 +197,7 @@
     },
     "required": [
         "_id",
+        "updatedAt",
         "ownerId",
         "name",
         "email",
