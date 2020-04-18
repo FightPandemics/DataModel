@@ -1,0 +1,198 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "organizations",
+    "additionalProperties": false,
+    "properties": {
+        "_id": {
+            "type": "string",
+            "description": "Automatically generated _id.",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "ownerId": {
+            "type": "string",
+            "description": "_id of the user who owns the organization.",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "name": {
+            "type": "string",
+            "description": "Organization's name.\n"
+        },
+        "description": {
+            "type": "string",
+            "description": "Small description of the organization (limited to 100 char)."
+        },
+        "location": {
+            "type": "object",
+            "properties": {
+                "coordinates": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "minItems": 2,
+                    "maxItems": 2,
+                    "uniqueItems": false,
+                    "description": "Array with the coordinates, specifying **longitude first** and **latitude second**, as default in the [GeoJSON](https://docs.mongodb.com/manual/reference/geojson/) definition.",
+                    "items": [
+                        {
+                            "type": "number",
+                            "minimum": -180,
+                            "maximum": 180,
+                            "default": 0,
+                            "description": "Location longitude\n",
+                            "id": "lng"
+                        },
+                        {
+                            "type": "number",
+                            "minimum": -90,
+                            "maximum": 90,
+                            "default": 0,
+                            "description": "Location latitude\n",
+                            "id": "lat"
+                        }
+                    ]
+                },
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "Point"
+                    ],
+                    "description": "Type of the GeoJSON Object.\nPlease refer to the [official documentation](https://docs.mongodb.com/manual/reference/geojson/ ) for more information.\n\n**In our case, the value will always be of the type \"Point\".**"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "String holding the country's name.\n"
+                },
+                "city": {
+                    "type": "string",
+                    "description": "String holding the city's name."
+                },
+                "neighborhood": {
+                    "type": "string",
+                    "description": "String holding the neighborhood's name."
+                },
+                "address": {
+                    "type": "string",
+                    "description": "String holding the address (street, number and other details)."
+                }
+            },
+            "additionalProperties": false,
+            "description": "Location document according to the norms of a [GeoJSON Object](https://docs.mongodb.com/manual/reference/geojson/ ).\nThe fields address, neighborhood, city, state and country are added to store the result of the geoprocessing.",
+            "required": [
+                "coordinates",
+                "type"
+            ]
+        },
+        "global": {
+            "type": "boolean",
+            "description": "Flag to indicate wheter this organization is global.",
+            "default": false
+        },
+        "urls": {
+            "type": "object",
+            "description": "Document holding external urls and refs to the organization such as social media profiles.",
+            "properties": {
+                "linkedin": {
+                    "type": "string",
+                    "description": "URL to organization's Linkedin page.",
+                    "format": "uri"
+                },
+                "twitter": {
+                    "type": "string",
+                    "description": "URL to organization's Twitter page.",
+                    "format": "uri"
+                },
+                "website": {
+                    "type": "string",
+                    "description": "URL to organization's website.",
+                    "format": "uri"
+                },
+                "playstore": {
+                    "type": "string",
+                    "description": "URL to organization's page at Google Play Store.",
+                    "format": "uri"
+                },
+                "appstore": {
+                    "type": "string",
+                    "description": "URL to organization's page at Apple App Store",
+                    "format": "uri"
+                }
+            },
+            "additionalProperties": false
+        },
+        "photo": {
+            "type": "string",
+            "description": "URI with the location of the profile's photo.",
+            "format": "uri"
+        },
+        "email": {
+            "type": "string",
+            "description": "Organization's email",
+            "format": "email"
+        },
+        "type": {
+            "type": "string",
+            "description": "The type of the organization. Can be: Community, Government, Health care provider, Non-profit, Other, R&D, Startup, Traditional Company and University. All names are store in lowercase only.",
+            "enum": [
+                "startup",
+                "traditional company",
+                "community",
+                "government",
+                "r&d",
+                "non-profit",
+                "university",
+                "health care provider",
+                "other"
+            ]
+        },
+        "industry": {
+            "type": "string",
+            "description": "Industry from which the organization participates. Plan is for this values to be scraped from linkedin industries."
+        },
+        "language": {
+            "type": "string",
+            "description": "Field to inidicate the language used by the organization."
+        },
+        "objectives": {
+            "type": "object",
+            "description": "Document with what are the objectives of the organization through the application, such as finding volunteers, staff, investors and donors.",
+            "properties": {
+                "volunteers": {
+                    "type": "boolean",
+                    "description": "Flag to indicate wheter the organization is seeking volunteers through the app.",
+                    "default": false
+                },
+                "donations": {
+                    "type": "boolean",
+                    "description": "Flag to indicate wheter the organization is seeking donations through the app.",
+                    "default": false
+                },
+                "staff": {
+                    "type": "boolean",
+                    "description": "Flag to indicate wheter the organization is seeking staff through the app.",
+                    "default": false
+                },
+                "other": {
+                    "type": "boolean",
+                    "description": "Flag to indicate wheter the organization is seeking other needs through the app.",
+                    "default": false
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "volunteers",
+                "donations",
+                "staff",
+                "other"
+            ]
+        }
+    },
+    "required": [
+        "_id",
+        "ownerId",
+        "name",
+        "email",
+        "type",
+        "industry",
+        "objectives"
+    ]
+}
