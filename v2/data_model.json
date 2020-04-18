@@ -2,7 +2,7 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "",
-    "lastModifTS": "2020-04-18T15:28:05.378Z",
+    "lastModifTS": "2020-04-18T16:05:29.440Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -1753,26 +1753,32 @@
                     }
                 },
                 {
-                    "type": "date",
+                    "type": "string",
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "format": "",
+                    "default": "",
                     "primaryKey": false,
                     "relationshipType": "",
                     "parentRelationship": "",
                     "childRelationships": [],
                     "foreignCollection": "",
                     "foreignField": [],
-                    "default": "",
-                    "format": "",
+                    "enum": [],
                     "sample": "",
-                    "GUID": "5cd376d0-8184-11ea-9e2e-c5ef5a601426",
-                    "name": "createdAt",
+                    "GUID": "a4b35750-818d-11ea-aa70-addba105f46c",
+                    "name": "authId",
                     "code": "",
-                    "description": "",
+                    "description": "String holding the authentication service id (Auth0).\n\nThis field is a **foreign key to the user in the Auth0 database**, connecting through the user_id field.",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {}
+                    "error": {
+                        "name": false
+                    }
                 },
                 {
                     "type": "objectId",
@@ -2628,9 +2634,9 @@
         "e3b342c0-8134-11ea-a764-5d61b98a5ce8": "address",
         "11110b10-7fb1-11ea-ba73-c97a35e85484": "createdAt",
         "19aba640-7fb1-11ea-ba73-c97a35e85484": "updatedAt",
-        "5cd376d0-8184-11ea-9e2e-c5ef5a601426": "createdAt",
         "65df2350-8184-11ea-9e2e-c5ef5a601426": "createdAt",
-        "6af0e5e0-8184-11ea-9e2e-c5ef5a601426": "updatedAt"
+        "6af0e5e0-8184-11ea-9e2e-c5ef5a601426": "updatedAt",
+        "a4b35750-818d-11ea-aa70-addba105f46c": "authId"
     },
     "definitions": {
         "type": "definitions",
@@ -3594,8 +3600,8 @@
                     },
                     {
                         "GUID": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 527.0974361200052,
-                        "y": 120.23881226718751,
+                        "x": 523.0974361200052,
+                        "y": 171.2388122671875,
                         "width": 244,
                         "height": 212,
                         "color": {
@@ -3624,10 +3630,10 @@
                     },
                     {
                         "GUID": "68a89cd0-8132-11ea-a764-5d61b98a5ce8",
-                        "x": 222.06491947755774,
-                        "y": 110,
-                        "width": 244,
-                        "height": 253,
+                        "x": 219.06491947755774,
+                        "y": 167,
+                        "width": 273,
+                        "height": 263,
                         "color": {
                             "hsl": {
                                 "h": 290.8029197080292,
@@ -3665,8 +3671,8 @@
                         "GUID": "d93b54d0-7faf-11ea-ba73-c97a35e85484"
                     },
                     {
-                        "x": 182.06491947755774,
-                        "y": 70,
+                        "x": 179.06491947755774,
+                        "y": 127,
                         "GUID": "bd396b90-7fb0-11ea-ba73-c97a35e85484"
                     },
                     {
