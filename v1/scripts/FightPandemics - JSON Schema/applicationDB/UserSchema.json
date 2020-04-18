@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "UserSchema",
+    "additionalProperties": false,
+    "properties": {
+        "accessToken": {
+            "type": "string"
+        },
+        "dateJoined": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "email": {
+            "type": "string"
+        },
+        "firstName": {
+            "type": "string"
+        },
+        "lastName": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "_id": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        }
+    },
+    "required": [
+        "email",
+        "firstName",
+        "_id"
+    ]
+}

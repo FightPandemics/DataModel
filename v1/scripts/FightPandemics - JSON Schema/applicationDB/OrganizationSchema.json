@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "OrganizationSchema",
+    "additionalProperties": false,
+    "properties": {
+        "address": {
+            "type": "string"
+        },
+        "androidUrl": {
+            "type": "string"
+        },
+        "description": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        },
+        "global": {
+            "type": "boolean"
+        },
+        "industry": {
+            "type": "string"
+        },
+        "iosUrl": {
+            "type": "string"
+        },
+        "language": {
+            "type": "string"
+        },
+        "linkedinUrl": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "name": {
+            "type": "string"
+        },
+        "needs": {
+            "type": "array",
+            "additionalItems": true,
+            "uniqueItems": false
+        },
+        "ownerId": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "twitterUrl": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        },
+        "website": {
+            "type": "string"
+        },
+        "_id": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        }
+    },
+    "required": [
+        "email",
+        "industry",
+        "name",
+        "needs",
+        "type",
+        "_id"
+    ]
+}

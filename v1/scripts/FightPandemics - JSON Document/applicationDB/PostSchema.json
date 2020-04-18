@@ -1,0 +1,50 @@
+{
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "androidUrl": "Lorem",
+    "authorId": ObjectId("507f1f77bcf86cd799439011"),
+    "comments": {
+        "type": [
+            {}
+        ]
+    },
+    "commentsCount": -55,
+    "description": "Lorem",
+    "iosUrl": "Lorem",
+    "language": [
+        "Lorem"
+    ],
+    "likes": {
+        "type": [
+            ObjectId("507f1f77bcf86cd799439011")
+        ]
+    },
+    "likesCount": 67,
+    "looking": {
+        "type": [
+            "Lorem"
+        ]
+    },
+    "media": "Lorem",
+    "needs": {
+        "type": [
+            "Lorem"
+        ]
+    },
+    "postEmail": "Lorem",
+    "shareWith": {
+        "type": [
+            "Lorem"
+        ]
+    },
+    "status": true,
+    "tags": [
+        "Lorem"
+    ],
+    "title": "Lorem",
+    "type": {
+        "type": [
+            "Lorem"
+        ]
+    },
+    "website": "Lorem"
+}

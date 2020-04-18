@@ -1,0 +1,18 @@
+{
+    "address": "Lorem",
+    "androidUrl": "Lorem",
+    "description": "Lorem",
+    "email": "Lorem",
+    "global": true,
+    "industry": "Lorem",
+    "iosUrl": "Lorem",
+    "language": "Lorem",
+    "linkedinUrl": "Lorem",
+    "location": ObjectId("507f1f77bcf86cd799439011"),
+    "name": "Lorem",
+    "ownerId": ObjectId("507f1f77bcf86cd799439011"),
+    "twitterUrl": "Lorem",
+    "type": "Lorem",
+    "website": "Lorem",
+    "_id": ObjectId("507f1f77bcf86cd799439011")
+}

@@ -1,0 +1,9 @@
+{
+    "accessToken": "Lorem",
+    "dateJoined": ISODate("2016-04-08T15:06:21.595Z"),
+    "email": "Lorem",
+    "firstName": "Lorem",
+    "lastName": "Lorem",
+    "location": ObjectId("507f1f77bcf86cd799439011"),
+    "_id": ObjectId("507f1f77bcf86cd799439011")
+}

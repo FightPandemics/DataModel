@@ -1,0 +1,154 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "PostSchema",
+    "additionalProperties": false,
+    "properties": {
+        "_id": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "androidUrl": {
+            "type": "string"
+        },
+        "authorId": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "comments": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "commentsCount": {
+            "type": "number"
+        },
+        "description": {
+            "type": "string"
+        },
+        "iosUrl": {
+            "type": "string"
+        },
+        "language": {
+            "type": "array",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "likes": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[a-fA-F0-9]{24}$"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "likesCount": {
+            "type": "number"
+        },
+        "looking": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "media": {
+            "type": "string"
+        },
+        "needs": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "postEmail": {
+            "type": "string"
+        },
+        "shareWith": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "status": {
+            "type": "boolean"
+        },
+        "tags": {
+            "type": "array",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "type": "string"
+            }
+        },
+        "title": {
+            "type": "string"
+        },
+        "type": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "website": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "authorId",
+        "description",
+        "title"
+    ]
+}

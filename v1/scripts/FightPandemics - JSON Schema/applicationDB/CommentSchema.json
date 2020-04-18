@@ -1,0 +1,74 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "CommentSchema",
+    "additionalProperties": false,
+    "properties": {
+        "_id": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "authorId": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "comment": {
+            "type": "string"
+        },
+        "likes": {
+            "type": "object",
+            "properties": {
+                "type": {
+                    "type": "array",
+                    "additionalItems": true,
+                    "uniqueItems": false,
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[a-fA-F0-9]{24}$"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "likesCount": {
+            "type": "number"
+        },
+        "parentId": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "postId": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "childCount": {
+            "type": "number"
+        },
+        "children": {
+            "type": "array",
+            "additionalItems": true,
+            "uniqueItems": false,
+            "items": {
+                "type": "string",
+                "description": "Array of embedded documents with nested comments.",
+                "pattern": "^[a-fA-F0-9]{24}$"
+            }
+        },
+        "created_at": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "updated_at": {
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": [
+        "_id",
+        "authorId",
+        "comment",
+        "postId",
+        "created_at",
+        "updated_at"
+    ]
+}

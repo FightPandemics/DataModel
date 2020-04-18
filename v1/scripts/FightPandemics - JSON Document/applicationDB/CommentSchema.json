@@ -1,0 +1,19 @@
+{
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "authorId": ObjectId("507f1f77bcf86cd799439011"),
+    "comment": "Lorem",
+    "likes": {
+        "type": [
+            ObjectId("507f1f77bcf86cd799439011")
+        ]
+    },
+    "likesCount": -10,
+    "parentId": ObjectId("507f1f77bcf86cd799439011"),
+    "postId": ObjectId("507f1f77bcf86cd799439011"),
+    "childCount": -9,
+    "children": [
+        ObjectId("507f1f77bcf86cd799439011")
+    ],
+    "created_at": ISODate("2016-04-08T15:06:21.595Z"),
+    "updated_at": ISODate("2016-04-08T15:06:21.595Z")
+}
