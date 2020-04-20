@@ -1,8 +1,7 @@
 // -- Imports
-import { Schema as _Schema } from 'mongoose';
-var Schema = _Schema;
-
-import { schema as userSchema } from "./user";
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
+const User = require("./user").model
 
 // -- Schema
 var organizationSchema = new Schema({
@@ -52,8 +51,8 @@ var organizationSchema = new Schema({
 // -- Methods
 
 function updateAuthorNameReferences(name) {
-    import { Post as Post } from "./post";
-    import { Comment as Comment } from "./comment";
+    const Post = require("./post").model
+    const Comment = require("./comment").model
 
     this.name = name;
 
@@ -68,8 +67,8 @@ function updateAuthorNameReferences(name) {
 }
 
 function updateAuthorTypeReferences(type) {
-    import { Post as Post } from "./post";
-    import { Comment as Comment } from "./comment";
+    const Post = require("./post").model
+    const Comment = require("./comment").model
 
     this.type = type;
 
@@ -88,9 +87,9 @@ function updateAuthorTypeReferences(type) {
 
 
 // -- Model
-var OrganizationUser = userSchema.discriminator(
+var OrganizationUser = User.discriminator(
     'OrganizationUser', organizationSchema
 );
 
-export const schema = organizationSchema
-export const model = OrganizationUser
+exports.schema = organizationSchema
+exports.model = OrganizationUser

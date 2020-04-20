@@ -1,9 +1,12 @@
 // -- Imports
-import { Schema as _Schema, ObjectId, model } from 'mongoose';
-import { schema as authorSchema } from "./author";
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
+const model = mongoose.model
+const ObjectId = mongoose.ObjectId
+const authorSchema = require("./author").schema
 
 // -- Schema
-var postSchema = new _Schema({
+var postSchema = new Schema({
     expireAt: {
         type: Date
     },
@@ -158,5 +161,5 @@ postSchema.index({'likes': 1})
 // -- Model
 var Post = model('Post', postSchema)
 
-export const schema = PostSchema
-export const model = Post
+exports.schema = postSchema
+exports.model = Post

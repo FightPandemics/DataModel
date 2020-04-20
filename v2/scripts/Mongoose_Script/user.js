@@ -1,9 +1,11 @@
 // -- Imports
-import { Schema as _Schema, model } from 'mongoose';
-import locationSchema from "./location";
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
+const model = mongoose.model
+const locationSchema = require("./location").schema
 
 // -- Schema
-var userSchema = new _Schema({
+var userSchema = new Schema({
     authId: { type: String, required: true },
     email: {
         type: String,
@@ -22,8 +24,8 @@ userSchema.path("location", {
     set: updateAuthorLocationReference
 })
 function updateAuthorLocationReference(location) {
-    import { Post as Post } from "./post";
-    import { Comment as Comment } from "./comment";
+    const Post = require("./post").model
+    const Comment = require("./comment").model
 
     this.location = location
 
@@ -44,12 +46,9 @@ userSchema.index({
     createdAt: -1
 })
 
-// Index for author's foreign key for lookup performance
-postSchema.index({'author.authorId': 1, createdAt: -1})
-
 
 // -- Model
 var User = model('User', userSchema)
 
-export const schema = userSchema
-export const user = User
+exports.schema = userSchema
+exports.model = User

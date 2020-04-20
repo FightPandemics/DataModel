@@ -1,9 +1,10 @@
 // -- Imports
-import { Schema as _Schema } from 'mongoose';
-import { schema as userSchema } from "./user";
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
+const User = require("./user").model
 
 // -- Schema
-var individualUserSchema = new _Schema({
+var individualUserSchema = new Schema({
     type: {
         type: String,
         required: true,
@@ -39,8 +40,8 @@ var individualUserSchema = new _Schema({
 // -- Methods
 
 function updateAuthorFirstNameReferences(firstName) {
-    import { Post as Post } from "./post";
-    import { Comment as Comment } from "./comment";
+    const Post = require("./post").model
+    const Comment = require("./comment").model
 
     this.firstName = firstName
 
@@ -54,8 +55,8 @@ function updateAuthorFirstNameReferences(firstName) {
     )
 }
 function updateAuthorLastNameReferences(lastName) {
-    import { Post as Post } from "./post";
-    import { Comment as Comment } from "./comment";
+    const Post = require("./post").model
+    const Comment = require("./comment").model
 
     this.lastName = lastName
 
@@ -77,9 +78,9 @@ individualUserSchema.virtual('fullName').get(function () {
 
 
 // -- Model
-var IndividualUser = userSchema.discriminator(
+var IndividualUser = User.discriminator(
     'IndividualUser', individualUserSchema
 );
 
-export const schema = individualUserSchema
-export const model = IndividualUser
+exports.schema = individualUserSchema
+exports.model = IndividualUser

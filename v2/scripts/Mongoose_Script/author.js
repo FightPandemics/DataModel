@@ -1,11 +1,11 @@
 // -- Imports
-import { Schema as _Schema, ObjectId, model } from 'mongoose';
-import { schema as locationSchema } from "./location";
+const mongoose = require("mongoose")
+const locationSchema = require("./location").schema
 
 // -- Schema
-var authorSchema = new _Schema({
+var authorSchema = new mongoose.Schema({
     authorId: {
-        type: ObjectId,
+        type: mongoose.ObjectId,
         ref: 'User',
         required: true
     },
@@ -35,7 +35,7 @@ var authorSchema = new _Schema({
 })
 
 // -- Model
-var Author = model('Author', authorSchema)
+var Author = mongoose.model('Author', authorSchema)
 
-export const schema = authorSchema
-export const model = Author
+exports.schema = authorSchema
+exports.model = Author

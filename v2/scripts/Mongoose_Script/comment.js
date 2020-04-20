@@ -1,9 +1,12 @@
 // -- Imports
-import { Schema as _Schema, ObjectId, model } from 'mongoose';
-import { schema as authorSchema } from "./author";
+const mongoose = require("mongoose")
+const Schema = mongoose.Schema
+const model = mongoose.model
+const ObjectId = mongoose.ObjectId
+const authorSchema = require("./author").schema
 
 // -- Schema
-var commentSchema = new _Schema({
+var commentSchema = new Schema({
     author: authorSchema,
     postId: {
         type: ObjectId,
@@ -49,5 +52,5 @@ commentSchema.index({'likes': 1})
 // -- Model
 var Comment = model('Comment', commentSchema)
 
-export const schema = commentSchema
-export const model = Comment
+exports.schema = commentSchema
+exports.model = Comment

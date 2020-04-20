@@ -1,8 +1,9 @@
 // -- Imports
-import { Schema as _Schema, model } from 'mongoose';
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
 // - Schema
-var locationSchema = new _Schema({
+var locationSchema = new Schema({
     coordinates: {
         type: [Number],
         required: true,
@@ -45,7 +46,8 @@ var locationSchema = new _Schema({
 })
 
 // -- Model
-var Location = model('Location', locationSchema)
+var Location = mongoose.model('Location', locationSchema)
 
-export const schema = locationSchema
-export const model = Location
+// -- Export
+exports.schema = locationSchema
+exports.model = Location
