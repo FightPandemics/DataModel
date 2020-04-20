@@ -19,7 +19,8 @@ var organizationSchema = new Schema({
             "startup",
             "traditional company",
             "university"
-        ]
+        ],
+        set: updateAuthorTypeReferences
     },
     industry: { type: String, required: true },
     ownerId: {
@@ -27,7 +28,11 @@ var organizationSchema = new Schema({
         ref: 'IndividualUser',
         required: true
     },
-    name: { type:String, required: true },
+    name: {
+        type:String,
+        required: true,
+        set: updateAuthorNameReferences
+    },
     needs: {
         donations: { type: Boolean, required: true, default: false },
         other: { type: Boolean, required: true, default: false },
@@ -43,6 +48,41 @@ var organizationSchema = new Schema({
         website: String
     }
 }, { collection: 'users' });
+
+// -- Methods
+
+function updateAuthorNameReferences(name) {
+    import { Post as Post } from "./post";
+    import { Comment as Comment } from "./comment";
+
+    this.name = name;
+
+    Post.where(
+        { "author.authorId": this._id },
+        { "$set": { "author.authorName": this.name } }
+    )
+    Comment.where(
+        { "author.authorId": this._id },
+        { "$set": { "author.authorName": this.name } }
+    )
+}
+
+function updateAuthorTypeReferences(type) {
+    import { Post as Post } from "./post";
+    import { Comment as Comment } from "./comment";
+
+    this.type = type;
+
+    Post.where(
+        { "author.authorId": this._id },
+        { "$set": { "author.authorType": this.type } }
+    )
+    Comment.where(
+        { "author.authorId": this._id },
+        { "$set": { "author.authorType": this.type } }
+    )
+}
+
 
 // -- Indexes
 

@@ -17,6 +17,26 @@ var userSchema = new _Schema({
     photo: String
 }, { collection: 'users', timestamps: true });
 
+// -- Methods
+userSchema.path("location", {
+    set: updateAuthorLocationReference
+})
+function updateAuthorLocationReference(location) {
+    import { Post as Post } from "./post";
+    import { Comment as Comment } from "./comment";
+
+    this.location = location
+
+    Post.where(
+        { "author.authorId": this._id },
+        { "$set": { "author.location": this.location } }
+    )
+    Comment.where(
+        {"author.authorId": this._id },
+        { "$set": { "author.location": this.location } }
+    )
+}
+
 // -- Indexes
 userSchema.index({
     type: 1,
