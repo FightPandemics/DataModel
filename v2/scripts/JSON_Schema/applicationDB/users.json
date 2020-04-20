@@ -2,6 +2,7 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "title": "users",
+    "description": "Collection that holds all the data on system's users. \n\nThe users can be of **two types**: **(1) Individual**, representing a private user account; and **(2) Organization**, representing an organization of various types.\n\nThe field 'type' is used to differentiate between the two subschemas, with 'individual' representing private user accounts and \"Community\", \"Government\", \"Health care provider\", \"Non-profit\", \"Other\", \"R&D\", \"Startup\", \"Traditional Company\" and \"University\".",
     "additionalProperties": true,
     "properties": {
         "createdAt": {
@@ -9,27 +10,24 @@
             "description": "Timestamp with the user's creation date",
             "format": "date-time"
         },
+        "_id": {
+            "type": "string",
+            "description": "Automatically generated _it as primary key.",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
         "updatedAt": {
             "type": "string",
             "description": "Timestamp indicating last update on the database.",
             "format": "date-time"
         },
+        "authId": {
+            "type": "string",
+            "description": "String holding the authentication service id (Auth0).\n\nThis field is a **foreign key to the user in the Auth0 database**, connecting through the user_id field."
+        },
         "email": {
             "type": "string",
             "description": "User's email validated by a regex pattern.",
             "format": "email"
-        },
-        "accessToken": {
-            "type": "string",
-            "description": "User's acess token. Shouldn't be required?"
-        },
-        "firstName": {
-            "type": "string",
-            "description": "The first name of the user"
-        },
-        "lastName": {
-            "type": "string",
-            "description": "The last name of the user. Optional field."
         },
         "location": {
             "type": "object",
@@ -91,107 +89,247 @@
                 "type"
             ]
         },
-        "_id": {
+        "about": {
             "type": "string",
-            "description": "Automatically generated _it as primary key.",
-            "pattern": "^[a-fA-F0-9]{24}$"
-        },
-        "needs": {
-            "type": "object",
-            "description": "User's need in the app, representing what kind of help he/she needs",
-            "properties": {
-                "medicalHelp": {
-                    "type": "boolean",
-                    "description": "Flag to indicate wheter the user needs medical help. \nMarking this indicates he shows symptoms of COVID-19.",
-                    "default": false
-                },
-                "otherHelp": {
-                    "type": "boolean",
-                    "description": "Flag to indicate wheter the user needs non-medical help, such as getting groceries, medice and etc..",
-                    "default": false
-                }
-            },
-            "additionalProperties": false,
-            "required": [
-                "medicalHelp",
-                "otherHelp"
-            ]
-        },
-        "objectives": {
-            "type": "object",
-            "description": "Document with what are the objectives of the user through the application, such as donating, volunteering or sharing information.",
-            "properties": {
-                "volunteer": {
-                    "type": "boolean",
-                    "description": "Flag to indicate wheter the user wants to volunteer for iniciatives through the app.",
-                    "default": false
-                },
-                "donate": {
-                    "type": "boolean",
-                    "description": "Flag to indicate wheter the user wants to donate for iniciatives through the app.",
-                    "default": false
-                },
-                "shareInformation": {
-                    "type": "boolean",
-                    "description": "Flag to indicate wheter the user wants to share information through the app.",
-                    "default": true
-                }
-            },
-            "additionalProperties": false,
-            "required": [
-                "volunteer",
-                "donate",
-                "shareInformation"
-            ]
+            "description": "Small self-introduction, limited to 100 char"
         },
         "photo": {
             "type": "string",
             "description": "URI with the location of the profile's photo.",
             "format": "uri"
-        },
-        "urls": {
-            "type": "object",
-            "description": "Document holding the user urls to external websites and social networks",
-            "properties": {
-                "facebookURL": {
-                    "type": "string",
-                    "description": "URL to user's Facebook page.",
-                    "format": "uri"
-                },
-                "linkedinURL": {
-                    "type": "string",
-                    "description": "URL to user's Linkedin page.",
-                    "format": "uri"
-                },
-                "twitterURL": {
-                    "type": "string",
-                    "description": "URL to user's Twitter page.",
-                    "format": "uri"
-                },
-                "githubURL": {
-                    "type": "string",
-                    "description": "URL to user's Github page.",
-                    "format": "uri"
-                },
-                "websiteURL": {
-                    "type": "string",
-                    "description": "URL to user's personal website.",
-                    "format": "uri"
-                }
-            },
-            "additionalProperties": false
-        },
-        "about": {
-            "type": "string",
-            "description": "Small self-introduction, limited to 100 char"
         }
     },
+    "oneOf": [
+        {
+            "id": "individual",
+            "type": "object",
+            "description": "Subschema representing a individual account.",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "individual"
+                    ]
+                },
+                "firstName": {
+                    "type": "string",
+                    "description": "The first name of the user"
+                },
+                "lastName": {
+                    "type": "string",
+                    "description": "The last name of the user. Optional field."
+                },
+                "needs": {
+                    "type": "object",
+                    "description": "User's need in the app, representing what kind of help he/she needs",
+                    "properties": {
+                        "medicalHelp": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the user needs medical help. \nMarking this indicates he shows symptoms of COVID-19.",
+                            "default": false
+                        },
+                        "otherHelp": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the user needs non-medical help, such as getting groceries, medice and etc..",
+                            "default": false
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "medicalHelp",
+                        "otherHelp"
+                    ]
+                },
+                "objectives": {
+                    "type": "object",
+                    "description": "Document with what are the objectives of the user through the application, such as donating, volunteering or sharing information.",
+                    "properties": {
+                        "volunteer": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the user wants to volunteer for iniciatives through the app.",
+                            "default": false
+                        },
+                        "donate": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the user wants to donate for iniciatives through the app.",
+                            "default": false
+                        },
+                        "shareInformation": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the user wants to share information through the app.",
+                            "default": true
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "volunteer",
+                        "donate",
+                        "shareInformation"
+                    ]
+                },
+                "urls": {
+                    "type": "object",
+                    "description": "Document holding the user urls to external websites and social networks",
+                    "properties": {
+                        "facebook": {
+                            "type": "string",
+                            "description": "URL to user's Facebook page.",
+                            "format": "uri"
+                        },
+                        "linkedin": {
+                            "type": "string",
+                            "description": "URL to user's Linkedin page.",
+                            "format": "uri"
+                        },
+                        "twitter": {
+                            "type": "string",
+                            "description": "URL to user's Twitter page.",
+                            "format": "uri"
+                        },
+                        "github": {
+                            "type": "string",
+                            "description": "URL to user's Github page.",
+                            "format": "uri"
+                        },
+                        "website": {
+                            "type": "string",
+                            "description": "URL to user's personal website.",
+                            "format": "uri"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "type",
+                "firstName",
+                "needs"
+            ]
+        },
+        {
+            "id": "organization",
+            "type": "object",
+            "description": "Subschema representing an organization (colective) account.",
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "The type of the organization. Can be: Community, Government, Health care provider, Non-profit, Other, R&D, Startup, Traditional Company and University. All names are store in lowercase only.",
+                    "enum": [
+                        "startup",
+                        "traditional company",
+                        "community",
+                        "government",
+                        "r&d",
+                        "non-profit",
+                        "university",
+                        "health care provider",
+                        "other"
+                    ]
+                },
+                "industry": {
+                    "type": "string",
+                    "description": "Industry from which the organization participates. Plan is for this values to be scraped from linkedin industries."
+                },
+                "ownerId": {
+                    "type": "string",
+                    "description": "_id of the user who owns the organization.",
+                    "pattern": "^[a-fA-F0-9]{24}$"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Organization's name.\n"
+                },
+                "needs": {
+                    "type": "object",
+                    "description": "Document with what are the objectives of the organization through the application, such as finding volunteers, staff, investors and donors.",
+                    "properties": {
+                        "volunteers": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the organization is seeking volunteers through the app.",
+                            "default": false
+                        },
+                        "donations": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the organization is seeking donations through the app.",
+                            "default": false
+                        },
+                        "staff": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the organization is seeking staff through the app.",
+                            "default": false
+                        },
+                        "other": {
+                            "type": "boolean",
+                            "description": "Flag to indicate wheter the organization is seeking other needs through the app.",
+                            "default": false
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "volunteers",
+                        "donations",
+                        "staff",
+                        "other"
+                    ]
+                },
+                "global": {
+                    "type": "boolean",
+                    "description": "Flag to indicate wheter this organization is global.",
+                    "default": false
+                },
+                "urls": {
+                    "type": "object",
+                    "description": "Document holding external urls and refs to the organization such as social media profiles.",
+                    "properties": {
+                        "linkedinURL": {
+                            "type": "string",
+                            "description": "URL to organization's Linkedin page.",
+                            "format": "uri"
+                        },
+                        "twitter": {
+                            "type": "string",
+                            "description": "URL to organization's Twitter page.",
+                            "format": "uri"
+                        },
+                        "website": {
+                            "type": "string",
+                            "description": "URL to organization's website.",
+                            "format": "uri"
+                        },
+                        "playstore": {
+                            "type": "string",
+                            "description": "URL to organization's page at Google Play Store.",
+                            "format": "uri"
+                        },
+                        "appstore": {
+                            "type": "string",
+                            "description": "URL to organization's page at Apple App Store",
+                            "format": "uri"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "language": {
+                    "type": "string",
+                    "description": "Field to inidicate the language used by the organization."
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "type",
+                "industry",
+                "ownerId",
+                "name",
+                "needs"
+            ]
+        }
+    ],
     "required": [
         "createdAt",
-        "updatedAt",
-        "email",
-        "firstName",
         "_id",
-        "needs"
+        "updatedAt",
+        "authId",
+        "email"
     ]
 }

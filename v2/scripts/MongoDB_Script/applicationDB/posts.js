@@ -108,12 +108,9 @@ db.createCollection( "posts",{
                     "bsonType": "string",
                     "description": "The post title."
                 },
-                "description": {
+                "content": {
                     "bsonType": "string",
                     "description": "String for the post content."
-                },
-                "status": {
-                    "bsonType": "bool"
                 },
                 "objective": {
                     "bsonType": "string",
@@ -229,20 +226,24 @@ db.createCollection( "posts",{
                         "bsonType": "string"
                     }
                 },
-                "external_links": {
+                "externalLinks": {
                     "bsonType": "object",
                     "properties": {
                         "email": {
-                            "bsonType": "string"
+                            "bsonType": "string",
+                            "description": "An email related to the post's content."
                         },
-                        "websiteURL": {
-                            "bsonType": "string"
+                        "website": {
+                            "bsonType": "string",
+                            "description": "Link for a website related to the post's content."
                         },
-                        "playStoreURL": {
-                            "bsonType": "string"
+                        "playStore": {
+                            "bsonType": "string",
+                            "description": "Link for a Play Store application related to the post's content."
                         },
-                        "appStoreURL": {
-                            "bsonType": "string"
+                        "appStore": {
+                            "bsonType": "string",
+                            "description": "Link for a AppStore application related to the post's content."
                         }
                     },
                     "additionalProperties": false
@@ -254,7 +255,7 @@ db.createCollection( "posts",{
                 "updatedAt",
                 "author",
                 "title",
-                "description",
+                "content",
                 "objective",
                 "visibility"
             ]

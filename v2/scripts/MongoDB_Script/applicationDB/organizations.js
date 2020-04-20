@@ -16,11 +16,16 @@ db.createCollection( "organizations",{
                     "description": "Automatically generated _id."
                 },
                 "createdAt": {
-                    "bsonType": "date"
+                    "bsonType": "date",
+                    "description": "Timestamp with the comment's creation date"
                 },
                 "updatedAt": {
                     "bsonType": "date",
                     "description": "Timestamp with the comment's last update date"
+                },
+                "authId": {
+                    "bsonType": "string",
+                    "description": "String holding the authentication service id (Auth0).\n\nThis field is a **foreign key to the user in the Auth0 database**, connecting through the user_id field."
                 },
                 "ownerId": {
                     "bsonType": "objectId",
@@ -184,7 +189,9 @@ db.createCollection( "organizations",{
             },
             "required": [
                 "_id",
+                "createdAt",
                 "updatedAt",
+                "authId",
                 "ownerId",
                 "name",
                 "email",

@@ -23,9 +23,82 @@ db.createCollection( "comments",{
                     "bsonType": "date",
                     "description": "Timestamp with the comment's last update date"
                 },
-                "authorId": {
-                    "bsonType": "objectId",
-                    "description": "Id of the user who created the comment."
+                "author": {
+                    "bsonType": "object",
+                    "properties": {
+                        "authorId": {
+                            "bsonType": "objectId",
+                            "description": "Foreign key to the user who created the post."
+                        },
+                        "authorName": {
+                            "bsonType": "string"
+                        },
+                        "authorType": {
+                            "bsonType": "string"
+                        },
+                        "location": {
+                            "bsonType": "object",
+                            "description": "Location document according to the norms of a [GeoJSON Object](https://docs.mongodb.com/manual/reference/geojson/ ).\nThe fields address, neighborhood, city, state and country are added to store the result of the geoprocessing.",
+                            "properties": {
+                                "coordinates": {
+                                    "bsonType": "array",
+                                    "description": "Array with the coordinates, specifying **longitude first** and **latitude second**, as default in the [GeoJSON](https://docs.mongodb.com/manual/reference/geojson/) definition.",
+                                    "additionalItems": true,
+                                    "minItems": 2,
+                                    "maxItems": 2,
+                                    "uniqueItems": false,
+                                    "items": [
+                                        {
+                                            "bsonType": "number",
+                                            "description": "Location longitude\n",
+                                            "minimum": -180,
+                                            "maximum": 180
+                                        },
+                                        {
+                                            "bsonType": "number",
+                                            "description": "Location latitude\n",
+                                            "minimum": -90,
+                                            "maximum": 90
+                                        }
+                                    ]
+                                },
+                                "type": {
+                                    "bsonType": "string",
+                                    "description": "Type of the GeoJSON Object.\nPlease refer to the [official documentation](https://docs.mongodb.com/manual/reference/geojson/ ) for more information.\n\n**In our case, the value will always be of the type \"Point\".**",
+                                    "enum": [
+                                        "Point"
+                                    ]
+                                },
+                                "country": {
+                                    "bsonType": "string",
+                                    "description": "String holding the country's name.\n"
+                                },
+                                "city": {
+                                    "bsonType": "string",
+                                    "description": "String holding the city's name."
+                                },
+                                "neighborhood": {
+                                    "bsonType": "string",
+                                    "description": "String holding the neighborhood's name."
+                                },
+                                "address": {
+                                    "bsonType": "string",
+                                    "description": "String holding the address (street, number and other details)."
+                                }
+                            },
+                            "additionalProperties": false,
+                            "required": [
+                                "coordinates",
+                                "type"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "authorId",
+                        "authorName",
+                        "authorType"
+                    ]
                 },
                 "postId": {
                     "bsonType": "objectId"
@@ -53,7 +126,7 @@ db.createCollection( "comments",{
                 "_id",
                 "createdAt",
                 "updatedAt",
-                "authorId",
+                "author",
                 "postId",
                 "content"
             ]
