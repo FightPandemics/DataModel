@@ -67,9 +67,9 @@ var postSchema = new Schema({
     language: [String],
     externalLinks: {
         email: String,
-        websiteURL: String,
-        playStoreURL: String,
-        appStoreURL: String
+        website: String,
+        playStore: String,
+        appStore: String
     }
 }, { collection: 'posts', timestamps: true })
 
