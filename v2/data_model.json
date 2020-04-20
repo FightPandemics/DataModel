@@ -2,7 +2,7 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "",
-    "lastModifTS": "2020-04-20T10:35:17.491Z",
+    "lastModifTS": "2020-04-20T11:51:23.344Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -1856,7 +1856,7 @@
                                             "enum": [],
                                             "sample": "http://linkedin.com/in/myProfile",
                                             "GUID": "09b06aec-82f0-11ea-821a-a1813ece7f73",
-                                            "name": "linkedinURL",
+                                            "name": "linkedin",
                                             "code": "",
                                             "description": "URL to organization's Linkedin page.",
                                             "comments": "",
@@ -2298,7 +2298,7 @@
         "09b06af6-82f0-11ea-821a-a1813ece7f73": "needs",
         "09b06af4-82f0-11ea-821a-a1813ece7f73": "industry",
         "09b06af1-82f0-11ea-821a-a1813ece7f73": "photo",
-        "09b06aec-82f0-11ea-821a-a1813ece7f73": "linkedinURL",
+        "09b06aec-82f0-11ea-821a-a1813ece7f73": "linkedin",
         "09b06aed-82f0-11ea-821a-a1813ece7f73": "twitter",
         "884300a0-80e5-11ea-a764-5d61b98a5ce8": "website",
         "8165cce0-80e5-11ea-a764-5d61b98a5ce8": "github",
@@ -2736,10 +2736,10 @@
                 "erd": [
                     {
                         "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                        "x": 520.2968356605066,
-                        "y": 685.6413567650146,
-                        "width": 284,
-                        "height": 212,
+                        "x": 530.2968356605066,
+                        "y": 714.6413567650146,
+                        "width": 312,
+                        "height": 296,
                         "color": {
                             "hsl": {
                                 "h": 187.04225352112678,
@@ -2766,10 +2766,10 @@
                     },
                     {
                         "GUID": "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 542.9645992237253,
-                        "y": 112.35986287130513,
-                        "width": 264,
-                        "height": 478,
+                        "x": 544.9645992237253,
+                        "y": 110,
+                        "width": 284,
+                        "height": 548,
                         "color": {
                             "hsl": {
                                 "h": 206.57142857142858,
@@ -2872,7 +2872,6 @@
                     "c3a69f70-7fb0-11ea-ba73-c97a35e85484",
                     "fede938b-7fb1-11ea-ba73-c97a35e85484",
                     "9693b430-7fb2-11ea-ba73-c97a35e85484",
-                    "e2868490-811e-11ea-a764-5d61b98a5ce8",
                     "d15d27a0-7fb6-11ea-b6ca-71d27d0acee3"
                 ],
                 "activeRelationship": "",
@@ -3005,12 +3004,6 @@
                     "efa3c380-80e3-11ea-a764-5d61b98a5ce8"
                 ],
                 [
-                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                    "5f2b2880-82ef-11ea-821a-a1813ece7f73",
-                    "a43c95d0-82ef-11ea-821a-a1813ece7f73",
-                    "09b06af6-82f0-11ea-821a-a1813ece7f73"
-                ],
-                [
                     "96933f00-7fb2-11ea-ba73-c97a35e85484",
                     "db65c2f0-82f1-11ea-821a-a1813ece7f73",
                     "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
@@ -3019,6 +3012,17 @@
                     "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
                     "e79df740-82f1-11ea-821a-a1813ece7f73",
                     "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
+                ],
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "5f2b2880-82ef-11ea-821a-a1813ece7f73",
+                    "5f6e24f0-82ef-11ea-821a-a1813ece7f73"
+                ],
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "5f2b2880-82ef-11ea-821a-a1813ece7f73",
+                    "a43c95d0-82ef-11ea-821a-a1813ece7f73",
+                    "09b06af6-82f0-11ea-821a-a1813ece7f73"
                 ]
             ],
             "details": true,
