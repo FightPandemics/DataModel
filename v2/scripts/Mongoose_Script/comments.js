@@ -1,20 +1,18 @@
 // -- Imports
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-const authorSchema = require("./author");
+import { Schema as _Schema, ObjectId, model } from 'mongoose';
+import { schema as authorSchema } from "./author";
 
 // -- Schema
-var commentSchema = new Schema({
+var commentSchema = new _Schema({
     author: authorSchema,
     postId: {
-        type: Schema.Types.ObjectId,
+        type: ObjectId,
         ref: 'Post',
         required: true
 
     },
     parentId: {
-        type: Schema.Types.ObjectId,
+        type: ObjectId,
         ref: 'Comment'
     },
     content: {
@@ -24,7 +22,7 @@ var commentSchema = new Schema({
     },
     likes: {
         // TODO: how to guarantee unique ids?
-        type: [mongoose.ObjectId],
+        type: [ObjectId],
         ref: "User",
         default: []
     },
@@ -36,20 +34,20 @@ var commentSchema = new Schema({
 commentSchema.index({
     postId: 1,
     parentId: 1,
-    createdAt: 1
+    createdAt: -1
 })
 
 // Index for parent comment's foreign key for lookup performance
-commentSchema.index({'parenId': 1})
+commentSchema.index({'parentId': 1, createdAt: -1})
 
 // Index for author's foreign key for lookup performance
-commentSchema.index({'author.authorId': 1})
+commentSchema.index({'author.authorId': 1, createdAt: -1})
 
 // Index for like's foreign key for lookup performance
 commentSchema.index({'likes': 1})
 
 // -- Model
-var Comment = mongoose.model('Comment', commentSchema)
+var Comment = model('Comment', commentSchema)
 
-// -- Export
-module.exports = commentSchema, Comment
+export const schema = commentSchema
+export const model = Comment

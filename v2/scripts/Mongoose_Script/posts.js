@@ -1,11 +1,9 @@
 // -- Imports
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
-
-const authorSchema = require("./author");
+import { Schema as _Schema, ObjectId, model } from 'mongoose';
+import { schema as authorSchema } from "./author";
 
 // -- Schema
-var postSchema = new Schema({
+var postSchema = new _Schema({
     expireAt: {
         type: Date
     },
@@ -42,7 +40,7 @@ var postSchema = new Schema({
     },
     likes: {
         // TODO: how to guarantee unique ids?
-        type: [mongoose.ObjectId],
+        type: [ObjectId],
         ref: "User",
         default: []
     },
@@ -152,13 +150,13 @@ postSchema.index({
 })
 
 // Index for author's foreign key for lookup performance
-postSchema.index({'author.authorId': 1})
+postSchema.index({'author.authorId': 1, createdAt: -1})
 
 // Index for like's foreign key for lookup performance
 postSchema.index({'likes': 1})
 
 // -- Model
-var Post = mongoose.model('Post', postSchema)
+var Post = model('Post', postSchema)
 
-// -- Export
-module.exports = AuthorSchema, PostSchema, Post
+export const schema = PostSchema
+export const model = Post
