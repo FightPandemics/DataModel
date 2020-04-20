@@ -23,9 +23,9 @@ The data model is versioned, with the current live version being [v1](/v1) and w
 
 # Documentation
 
-The documentation can be found in [HTML](v2/docs/FightPademics_documentation.html) and [PDF](v2/docs/FightPademics_documentation.pdf). The HTML live version is highly recommended.
+The documentation can be found in [HTML](v2/docs/FightPandemics_documentation.html) and [PDF](v2/docs/FightPandemics_documentation.pdf). The HTML live version is highly recommended.
 
-There is also an [excel spreadsheet version](v2/docs/FightPademics.xlsx).
+There is also an [excel spreadsheet version](v2/docs/FightPandemics.xlsx).
 
 <br />
 
