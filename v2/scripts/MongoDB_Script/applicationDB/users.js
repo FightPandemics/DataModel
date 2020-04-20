@@ -262,7 +262,7 @@ db.createCollection( "users",{
                             "bsonType": "object",
                             "description": "Document holding external urls and refs to the organization such as social media profiles.",
                             "properties": {
-                                "linkedinURL": {
+                                "linkedin": {
                                     "bsonType": "string",
                                     "description": "URL to organization's Linkedin page."
                                 },
