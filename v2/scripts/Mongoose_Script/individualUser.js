@@ -1,8 +1,8 @@
 // -- Imports
 const { Schema } = require("mongoose");
-const User = require("./user").model;
-const Post = require("./post").model;
-const Comment = require("./comment").model;
+const { model: User } = require("./user");
+const { model: Post } = require("./post");
+const { model: Comment } = require("./comment");
 
 // -- Schema
 function updateAuthorFirstNameReferences(firstName) {

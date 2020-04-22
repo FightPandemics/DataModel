@@ -1,8 +1,8 @@
 // -- Imports
 const { Schema, model } = require("mongoose");
-const locationSchema = require("./location").schema;
-const Post = require("./post").model;
-const Comment = require("./comment").model;
+const { schema: locationSchema } = require("./location");
+const { model: Post } = require("./post");
+const { model: Comment } = require("./comment");
 
 // -- Schema
 const userSchema = new Schema(

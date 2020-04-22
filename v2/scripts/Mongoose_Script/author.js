@@ -1,6 +1,6 @@
 // -- Imports
 const { Schema, model, ObjectId } = require("mongoose");
-const locationSchema = require("./location").schema;
+const { schema: locationSchema } = require("./location");
 
 // -- Schema
 const authorSchema = new Schema({
