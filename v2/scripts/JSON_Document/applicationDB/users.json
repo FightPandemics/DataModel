@@ -1,10 +1,9 @@
 {
     "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
     "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "authId": "Lorem",
     "email": "test_user@fightpandemics.com",
-    "accessToken": "Lorem",
-    "firstName": "Lorem",
-    "lastName": "Lorem",
     "location": {
         "coordinates": [
             35.26,
@@ -16,23 +15,25 @@
         "neighborhood": "Lorem",
         "address": "Lorem"
     },
-    "_id": ObjectId("507f1f77bcf86cd799439011"),
-    "needs": {
-        "medicalHelp": false,
-        "otherHelp": false
-    },
-    "objectives": {
-        "volunteer": false,
-        "donate": false,
-        "shareInformation": true
-    },
+    "about": "Lorem",
     "photo": "./resource.txt#frag01",
-    "urls": {
-        "facebookURL": "http://facebook.com/myProfile",
-        "linkedinURL": "http://linkedin.com/in/myProfile",
-        "twitterURL": "http://twitter.com/myProfile",
-        "githubURL": "http://github.com/myProfile",
-        "websiteURL": "http://mypersonalwebsite.com"
+    "type": "other",
+    "industry": "Lorem",
+    "ownerId": ObjectId("507f1f77bcf86cd799439011"),
+    "name": "Lorem",
+    "needs": {
+        "volunteers": true,
+        "donations": false,
+        "staff": false,
+        "other": false
     },
-    "about": "Lorem"
+    "global": false,
+    "urls": {
+        "linkedinURL": "http://linkedin.com/in/myProfile",
+        "twitter": "http://twitter.com/myProfile",
+        "website": "http://mypersonalwebsite.com",
+        "playstore": "http://playstore.com/myOrg",
+        "appstore": "http://appstore.com/myOrg"
+    },
+    "language": "Lorem"
 }

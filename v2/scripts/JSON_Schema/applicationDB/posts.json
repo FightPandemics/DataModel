@@ -111,12 +111,9 @@
             "type": "string",
             "description": "The post title."
         },
-        "description": {
+        "content": {
             "type": "string",
             "description": "String for the post content."
-        },
-        "status": {
-            "type": "boolean"
         },
         "objective": {
             "type": "string",
@@ -237,20 +234,24 @@
                 "type": "string"
             }
         },
-        "external_links": {
+        "externalLinks": {
             "type": "object",
             "properties": {
                 "email": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "An email related to the post's content."
                 },
-                "websiteURL": {
-                    "type": "string"
+                "website": {
+                    "type": "string",
+                    "description": "Link for a website related to the post's content."
                 },
-                "playStoreURL": {
-                    "type": "string"
+                "playStore": {
+                    "type": "string",
+                    "description": "Link for a Play Store application related to the post's content."
                 },
-                "appStoreURL": {
-                    "type": "string"
+                "appStore": {
+                    "type": "string",
+                    "description": "Link for a AppStore application related to the post's content."
                 }
             },
             "additionalProperties": false
@@ -262,7 +263,7 @@
         "updatedAt",
         "author",
         "title",
-        "description",
+        "content",
         "objective",
         "visibility"
     ]
