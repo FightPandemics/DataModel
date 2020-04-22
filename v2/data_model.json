@@ -2,7 +2,7 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "",
-    "lastModifTS": "2020-04-20T11:51:23.344Z",
+    "lastModifTS": "2020-04-22T17:42:36.154Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -941,7 +941,8 @@
                         "1306e850-8109-11ea-a764-5d61b98a5ce8",
                         "f71e1580-82ef-11ea-821a-a1813ece7f73",
                         "db833600-82f1-11ea-821a-a1813ece7f73",
-                        "10f59d50-82f2-11ea-821a-a1813ece7f73"
+                        "10f59d50-82f2-11ea-821a-a1813ece7f73",
+                        "dda294d0-84b8-11ea-8f4d-0b62bb8cf8ca"
                     ],
                     "foreignCollection": "",
                     "foreignField": [],
@@ -2057,6 +2058,344 @@
             "hackoladeMeta": {
                 "validationErrors": {}
             }
+        },
+        {
+            "GUID": "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
+            "collectionName": "feedbacks",
+            "code": "",
+            "type": "object",
+            "description": "Collection to hold feedback on the application.\n\nThis may be done with the user logged or not and, depending on that, we may or may not have a reference to the user in question at this model.",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": false,
+            "properties": [
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "939a9470-84c0-11ea-929b-770c2f9d8801",
+                    "name": "createdAt",
+                    "code": "",
+                    "description": "Timestamp with the feedback's creation date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "objectId",
+                    "format": "",
+                    "primaryKey": true,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "sample": "",
+                    "GUID": "3d427ab0-84b7-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "_id",
+                    "code": "",
+                    "description": "Automatically generated object_id as primary key.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "97510cc0-84c0-11ea-929b-770c2f9d8801",
+                    "name": "updatedAt",
+                    "code": "",
+                    "description": "Timestamp with the feedback's last update date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "numeric",
+                    "mode": "",
+                    "unit": "",
+                    "minimum": 1,
+                    "exclusiveMinimum": false,
+                    "maximum": 5,
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "enum": [],
+                    "sample": "",
+                    "GUID": "a408c060-84b7-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "rating",
+                    "code": "",
+                    "description": "A rating, in a scale of 1 to 5, of the application.\n\nCurrently present as: \"How well does FIghtPandemics meet your needs?\".\n\nPresent in the first part of the feedback and, therefore, is required.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "string",
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "format": "ipv4",
+                    "default": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "enum": [],
+                    "sample": "",
+                    "GUID": "0cca60e0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "ipAddress",
+                    "code": "",
+                    "description": "Caputred IP address in order to get user's location even if they are not logged.\n\nCaptured at the first part of the feedback and, therefore, is required.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "numeric",
+                    "mode": "integer64",
+                    "unit": "",
+                    "minimum": 18,
+                    "exclusiveMinimum": false,
+                    "maximum": "",
+                    "exclusiveMaximum": false,
+                    "multipleOf": "",
+                    "divisibleBy": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "enum": [],
+                    "sample": "",
+                    "GUID": "975b3500-84b7-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "age",
+                    "code": "",
+                    "description": "User's age.\n\nCurrently present as: \"What is your age?\".\n\nPresent in the third part of the feedback and, therefore, not required.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "string",
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "format": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "enum": [],
+                    "sample": "",
+                    "GUID": "5128d1e0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "mostValuableFeature",
+                    "code": "",
+                    "description": "User's feedback into what is the features most valuable for him/her.\n\nCurrently present as: \"Which features are the most valuable for you?\".\n\nPresent in the second part of the feedback and, therefore, not required.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "string",
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "format": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "enum": [],
+                    "sample": "",
+                    "GUID": "9a1110c0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "whatWouldChange",
+                    "code": "",
+                    "description": "User's feedback into what he/she would change about the application.\n\nCurrently present as: \"If you could change one thing about FightPandemics, what would it be?\".\n\nPresent in the second part of the feedback and, therefore, not required.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "string",
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "format": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "enum": [],
+                    "sample": "",
+                    "GUID": "a4e177b0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "generalFeedback",
+                    "code": "",
+                    "description": "User's general feedback section.\n\nCurrently present as: \"Any other feedback for us?\".\n\nPresent in the second part of the feedback and, therefore, not required.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "string",
+                    "minLength": "",
+                    "maxLength": "",
+                    "pattern": "",
+                    "format": "",
+                    "default": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "enum": [],
+                    "sample": "",
+                    "GUID": "f5f897a0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "covidImpact",
+                    "code": "",
+                    "description": "User's feedback into how the COVID impacted him.\n\nCurrently present as a multiple choice question.\n\n**Question:** \"How has COVID-19 impacted you?\"\n\n**Options:** \n\n1. I go to work/school normally\n2. I am healthy but in a stay-at-home quarentine\n3. I have mild symptoms but haven't been tested\n4. I am diagnosed with COVID-19\n\n\nPresent in the second part of the feedback and, therefore, not required.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "objectId",
+                    "format": "",
+                    "primaryKey": false,
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "dda294d0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "childRelationships": [],
+                    "foreignCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "foreignField": [
+                        "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                        "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                    ],
+                    "sample": "",
+                    "GUID": "ade31210-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "name": "userId",
+                    "code": "",
+                    "description": "Reference to the user's _id.\n\nThis will be present only if the user was logged in when completing the feedback.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "GUID": "e6c7e3d0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                    "type": "reference",
+                    "name": "location",
+                    "$ref": "#model/definitions/location",
+                    "refType": "model",
+                    "ref": "efec52d4-7fb2-11ea-ba73-c97a35e85484",
+                    "refIdPath": [
+                        "6b45e040-7fae-11ea-ba73-c97a35e85484",
+                        "6b460750-7fae-11ea-ba73-c97a35e85484",
+                        "efec52d4-7fb2-11ea-ba73-c97a35e85484"
+                    ],
+                    "required": false,
+                    "code": "",
+                    "primaryKey": false
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "05214710-84b7-11ea-8f4d-0b62bb8cf8ca"
+            },
+            "capped": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "size": "",
+            "max": "",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "key": "",
+                "hashed": false,
+                "unique": true,
+                "numInitialChunks": "",
+                "collation": "null",
+                "zone": "",
+                "comments": ""
+            },
+            "bucketId": "bd396b90-7fb0-11ea-ba73-c97a35e85484",
+            "hackoladeMeta": {
+                "validationErrors": {}
+            }
         }
     ],
     "buckets": [
@@ -2070,7 +2409,8 @@
             "collectionIds": [
                 "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
                 "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                "efec04b0-7fb2-11ea-ba73-c97a35e85484"
+                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                "05136460-84b7-11ea-8f4d-0b62bb8cf8ca"
             ],
             "backgroundColor": {
                 "r": 156,
@@ -2228,6 +2568,25 @@
                 "bd359b01-7fb0-11ea-ba73-c97a35e85484"
             ],
             "childCardinality": "1"
+        },
+        {
+            "GUID": "dda294d0-84b8-11ea-8f4d-0b62bb8cf8ca",
+            "name": "fk users._id to feedbacks.userId",
+            "description": "",
+            "comments": "",
+            "relationshipType": "Foreign Key",
+            "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+            "parentField": [
+                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+            ],
+            "parentCardinality": "1",
+            "childCollection": "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
+            "childField": [
+                "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
+                "ade31210-84b8-11ea-8f4d-0b62bb8cf8ca"
+            ],
+            "childCardinality": "1"
         }
     ],
     "users": [],
@@ -2310,7 +2669,21 @@
         "e79df740-82f1-11ea-821a-a1813ece7f73": "author",
         "10f59d50-82f2-11ea-821a-a1813ece7f73": "fk users._id to comments.likes",
         "bd359b01-7fb0-11ea-ba73-c97a35e85484": "parentId",
-        "17776aa0-82f2-11ea-821a-a1813ece7f73": "fk comments._id to comments.parentId"
+        "17776aa0-82f2-11ea-821a-a1813ece7f73": "fk comments._id to comments.parentId",
+        "05136460-84b7-11ea-8f4d-0b62bb8cf8ca": "feedbacks",
+        "a408c060-84b7-11ea-8f4d-0b62bb8cf8ca": "rating",
+        "0cca60e0-84b8-11ea-8f4d-0b62bb8cf8ca": "ipAddress",
+        "975b3500-84b7-11ea-8f4d-0b62bb8cf8ca": "age",
+        "5128d1e0-84b8-11ea-8f4d-0b62bb8cf8ca": "mostValuableFeature",
+        "9a1110c0-84b8-11ea-8f4d-0b62bb8cf8ca": "whatWouldChange",
+        "a4e177b0-84b8-11ea-8f4d-0b62bb8cf8ca": "generalFeedback",
+        "ade31210-84b8-11ea-8f4d-0b62bb8cf8ca": "userId",
+        "dda294d0-84b8-11ea-8f4d-0b62bb8cf8ca": "fk users._id to feedbacks.userId",
+        "e6c7e3d0-84b8-11ea-8f4d-0b62bb8cf8ca": "location",
+        "f5f897a0-84b8-11ea-8f4d-0b62bb8cf8ca": "covidImpact",
+        "3d427ab0-84b7-11ea-8f4d-0b62bb8cf8ca": "_id",
+        "939a9470-84c0-11ea-929b-770c2f9d8801": "createdAt",
+        "97510cc0-84c0-11ea-929b-770c2f9d8801": "updatedAt"
     },
     "definitions": {
         "type": "definitions",
@@ -2573,6 +2946,10 @@
                         "96933f00-7fb2-11ea-ba73-c97a35e85484",
                         "ce5f8570-811e-11ea-a764-5d61b98a5ce8",
                         "e2868490-811e-11ea-a764-5d61b98a5ce8"
+                    ],
+                    [
+                        "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
+                        "e6c7e3d0-84b8-11ea-8f4d-0b62bb8cf8ca"
                     ]
                 ]
             },
@@ -2728,7 +3105,7 @@
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "4.0.0"
+        "version": "4.0.1"
     },
     "settings": {
         "centralPane": {
@@ -2736,8 +3113,8 @@
                 "erd": [
                     {
                         "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                        "x": 530.2968356605066,
-                        "y": 714.6413567650146,
+                        "x": 410.29683566050625,
+                        "y": 967.9746900983487,
                         "width": 312,
                         "height": 296,
                         "color": {
@@ -2766,8 +3143,8 @@
                     },
                     {
                         "GUID": "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 544.9645992237253,
-                        "y": 110,
+                        "x": 807.6312658903918,
+                        "y": 135.33333333333331,
                         "width": 284,
                         "height": 548,
                         "color": {
@@ -2796,8 +3173,8 @@
                     },
                     {
                         "GUID": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 85.33589914178765,
-                        "y": 110,
+                        "x": 396.0025658084544,
+                        "y": 132.6666666666666,
                         "width": 325,
                         "height": 730,
                         "color": {
@@ -2823,6 +3200,14 @@
                             "oldHue": 339.7058823529412,
                             "source": "hex"
                         }
+                    },
+                    {
+                        "GUID": "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
+                        "x": 80,
+                        "y": 337.3333333333334,
+                        "width": 284,
+                        "height": 254,
+                        "color": {}
                     }
                 ],
                 "buckets": [
@@ -2837,8 +3222,8 @@
                         "GUID": "d93b54d0-7faf-11ea-ba73-c97a35e85484"
                     },
                     {
-                        "x": 45.33589914178765,
-                        "y": 70,
+                        "x": 40,
+                        "y": 92.6666666666666,
                         "GUID": "bd396b90-7fb0-11ea-ba73-c97a35e85484"
                     },
                     {
@@ -2892,7 +3277,6 @@
                     "parentField": []
                 },
                 "displayColorPicker": false,
-                "expandCollections": [],
                 "nestedCollectionsLayout": "horizontal"
             },
             "collectionLevel": {},
