@@ -29,7 +29,7 @@
     },
     "global": false,
     "urls": {
-        "linkedinURL": "http://linkedin.com/in/myProfile",
+        "linkedin": "http://linkedin.com/in/myProfile",
         "twitter": "http://twitter.com/myProfile",
         "website": "http://mypersonalwebsite.com",
         "playstore": "http://playstore.com/myOrg",
