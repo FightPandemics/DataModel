@@ -20,8 +20,7 @@
         }
     },
     "title": "Lorem",
-    "description": "Lorem",
-    "status": true,
+    "content": "Lorem",
     "objective": "offer",
     "visibility": "worldwide",
     "likes": [
@@ -44,10 +43,10 @@
     "language": [
         "Lorem"
     ],
-    "external_links": {
+    "externalLinks": {
         "email": "Lorem",
-        "websiteURL": "Lorem",
-        "playStoreURL": "Lorem",
-        "appStoreURL": "Lorem"
+        "website": "Lorem",
+        "playStore": "Lorem",
+        "appStore": "Lorem"
     }
 }

@@ -1,0 +1,24 @@
+{
+    "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "rating": 1,
+    "ipAddress": "192.168.0.1",
+    "age": 8528994625872795000,
+    "mostValuableFeature": "Lorem",
+    "whatWouldChange": "Lorem",
+    "generalFeedback": "Lorem",
+    "covidImpact": "Lorem",
+    "userId": ObjectId("507f1f77bcf86cd799439011"),
+    "location": {
+        "coordinates": [
+            35.26,
+            -32.83
+        ],
+        "type": "Point",
+        "country": "Lorem",
+        "city": "Lorem",
+        "neighborhood": "Lorem",
+        "address": "Lorem"
+    }
+}
