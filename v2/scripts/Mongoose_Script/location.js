@@ -1,53 +1,53 @@
 // -- Imports
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const { Schema, model } = require("mongoose");
 
 // - Schema
-var locationSchema = new Schema({
-    coordinates: {
-        type: [Number],
-        required: true,
-        validate: {
-            // Array must have two coordinates, with valid lng and lat values
-            validator : function(array) {
-                if (array[0].length != 2) return false
-                if (array[0] > 180 || array[0] < -180) return false
-                if (array[1] > 90 || array[0] < -90) return false
+const locationSchema = new Schema({
+  address: {
+    lowercase: true,
+    trim: true,
+    type: String,
+  },
+  city: {
+    lowercase: true,
+    trim: true,
+    type: String,
+  },
+  coordinates: {
+    required: true,
+    type: [Number],
+    validate: {
+      // Array must have two coordinates, with valid lng and lat values
+      validator(array) {
+        if (array[0].length !== 2) return false;
+        if (array[0] > 180 || array[0] < -180) return false;
+        if (array[1] > 90 || array[0] < -90) return false;
 
-                return true
-            }
-        }
+        return true;
+      },
     },
-    type: {
-        type: String,
-        required: true,
-        enum: ["Point"]
-    },
-    country: {
-        type: String,
-        lowercase: true,
-        trim: true
-    },
-    city: {
-        type: String,
-        lowercase: true,
-        trim: true
-    },
-    neighborhood: {
-        type: String,
-        lowercase: true,
-        trim: true
-    },
-    address: {
-        type: String,
-        lowercase: true,
-        trim: true
-    },
-})
+  },
+  country: {
+    lowercase: true,
+    trim: true,
+    type: String,
+  },
+  neighborhood: {
+    lowercase: true,
+    trim: true,
+    type: String,
+  },
+  type: {
+    default: "Point",
+    enum: ["Point"],
+    required: true,
+    type: String,
+  },
+});
 
 // -- Model
-var Location = mongoose.model('Location', locationSchema)
+const Location = model("Location", locationSchema);
 
 // -- Export
-exports.schema = locationSchema
-exports.model = Location
+exports.schema = locationSchema;
+exports.model = Location;

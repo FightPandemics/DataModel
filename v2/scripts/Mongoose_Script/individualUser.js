@@ -1,86 +1,85 @@
 // -- Imports
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
-const User = require("./user").model
+const { Schema } = require("mongoose");
+const User = require("./user").model;
+const Post = require("./post").model;
+const Comment = require("./comment").model;
 
 // -- Schema
-var individualUserSchema = new Schema({
-    type: {
-        type: String,
-        required: true,
-        enum: ["individual"]
-    },
+function updateAuthorFirstNameReferences(firstName) {
+  Post.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorName": `${firstName} ${this.lastName}` } },
+  );
+  Comment.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorName": `${firstName} ${this.lastName}` } },
+  );
+
+  return firstName;
+}
+function updateAuthorLastNameReferences(lastName) {
+  Post.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorName": `${this.firstName} ${lastName}` } },
+  );
+  Comment.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorName": `${this.firstName} ${lastName}` } },
+  );
+
+  return lastName;
+}
+
+const individualUserSchema = new Schema(
+  {
     firstName: {
-        type: String,
-        required: true,
-        set: updateAuthorFirstNameReferences
+      required: true,
+      set: updateAuthorFirstNameReferences,
+      type: String,
     },
     lastName: {
-        type: String,
-        set: updateAuthorLastNameReferences
+      set: updateAuthorLastNameReferences,
+      type: String,
     },
     needs: {
-        medicalHelp: { type: Boolean, required: true, default: false },
-        otherHelp: { type: Boolean, required: true, default: false }
+      medicalHelp: { default: false, required: true, type: Boolean },
+      otherHelp: { default: false, required: true, type: Boolean },
     },
     objectives: {
-        donate: { type: Boolean, required: true, default: false },
-        shareInformation: { type: Boolean, required: true, default: false },
-        volunteer: { type: Boolean, required: true, default: false }
+      donate: { default: false, required: true, type: Boolean },
+      shareInformation: { default: false, required: true, type: Boolean },
+      volunteer: { default: false, required: true, type: Boolean },
+    },
+    type: {
+      enum: ["individual"],
+      lowercase: true,
+      required: true,
+      type: String,
     },
     urls: {
-        facebook: String,
-        linkedin: String,
-        twitter: String,
-        github: String,
-        website: String
-    }
-}, { collection: 'users' });
+      facebook: String,
+      github: String,
+      linkedin: String,
+      twitter: String,
+      website: String,
+    },
+  },
+  { collection: "users" },
+);
 
 // -- Methods
 
-function updateAuthorFirstNameReferences(firstName) {
-    const Post = require("./post").model
-    const Comment = require("./comment").model
-
-    this.firstName = firstName
-
-    Post.where(
-        { "author.authorId": this._id },
-        { "$set": { "author.authorName": this.fullName } }
-    )
-    Comment.where(
-        { "author.authorId": this._id},
-        { "$set": { "author.authorName": this.fullName } }
-    )
-}
-function updateAuthorLastNameReferences(lastName) {
-    const Post = require("./post").model
-    const Comment = require("./comment").model
-
-    this.lastName = lastName
-
-    Post.where(
-        { "author.authorId": this._id },
-        { "$set": { "author.authorName": this.fullName } }
-    )
-    Comment.where(
-        { "author.authorId": this._id},
-        { "$set": { "author.authorName": this.fullName } }
-    )
-}
-
-individualUserSchema.virtual('fullName').get(function () {
-    return this.name.first + ' ' + this.name.last;
+individualUserSchema.virtual("fullName").get(function getFullName() {
+  return `${this.firstName} ${this.lastName}`;
 });
 
 // -- Indexes
 
-
 // -- Model
-var IndividualUser = User.discriminator(
-    'IndividualUser', individualUserSchema
+const IndividualUser = User.discriminator(
+  "IndividualUser",
+  individualUserSchema,
 );
 
-exports.schema = individualUserSchema
-exports.model = IndividualUser
+exports.schema = individualUserSchema;
+exports.model = IndividualUser;

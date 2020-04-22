@@ -1,95 +1,91 @@
 // -- Imports
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
-const User = require("./user").model
+const { Schema } = require("mongoose");
+const User = require("./user").model;
+const Post = require("./post").model;
+const Comment = require("./comment").model;
 
 // -- Schema
-var organizationSchema = new Schema({
-    type: {
-        type: String,
-        required: true,
-        enum: [
-            "community",
-            "government",
-            "health care provider",
-            "non-profit",
-            "other",
-            "r&d",
-            "startup",
-            "traditional company",
-            "university"
-        ],
-        set: updateAuthorTypeReferences
-    },
-    industry: { type: String, required: true },
-    ownerId: {
-        type: Schema.Types.ObjectId,
-        ref: 'IndividualUser',
-        required: true
-    },
-    name: {
-        type:String,
-        required: true,
-        set: updateAuthorNameReferences
-    },
-    needs: {
-        donations: { type: Boolean, required: true, default: false },
-        other: { type: Boolean, required: true, default: false },
-        staff: { type: Boolean, required: true, default: false },
-        volunteers: { type: Boolean, required: true, default: false }
-    },
-    global: Boolean,
-    urls: {
-        appStore: String,
-        linkedin: String,
-        playStore: String,
-        twitter: String,
-        website: String
-    }
-}, { collection: 'users' });
-
-// -- Methods
-
 function updateAuthorNameReferences(name) {
-    const Post = require("./post").model
-    const Comment = require("./comment").model
+  Post.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorName": name } },
+  );
+  Comment.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorName": name } },
+  );
 
-    this.name = name;
-
-    Post.where(
-        { "author.authorId": this._id },
-        { "$set": { "author.authorName": this.name } }
-    )
-    Comment.where(
-        { "author.authorId": this._id },
-        { "$set": { "author.authorName": this.name } }
-    )
+  return name;
 }
 
 function updateAuthorTypeReferences(type) {
-    const Post = require("./post").model
-    const Comment = require("./comment").model
+  Post.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorType": type } },
+  );
+  Comment.where(
+    { "author.authorId": this._id },
+    { $set: { "author.authorType": type } },
+  );
 
-    this.type = type;
-
-    Post.where(
-        { "author.authorId": this._id },
-        { "$set": { "author.authorType": this.type } }
-    )
-    Comment.where(
-        { "author.authorId": this._id },
-        { "$set": { "author.authorType": this.type } }
-    )
+  return type;
 }
 
+const organizationSchema = new Schema(
+  {
+    global: Boolean,
+    industry: { required: true, type: String },
+    name: {
+      required: true,
+      set: updateAuthorNameReferences,
+      type: String,
+    },
+    needs: {
+      donations: { default: false, required: true, type: Boolean },
+      other: { default: false, required: true, type: Boolean },
+      staff: { default: false, required: true, type: Boolean },
+      volunteers: { default: false, required: true, type: Boolean },
+    },
+    ownerId: {
+      ref: "IndividualUser",
+      required: true,
+      type: Schema.Types.ObjectId,
+    },
+    type: {
+      enum: [
+        "Company",
+        "Community",
+        "Government",
+        "Health care provider",
+        "Individual",
+        "Non-profit",
+        "Other",
+        "R&D",
+        "Startup",
+        "University",
+      ],
+      required: true,
+      set: updateAuthorTypeReferences,
+      type: String,
+    },
+    urls: {
+      appStore: String,
+      linkedin: String,
+      playStore: String,
+      twitter: String,
+      website: String,
+    },
+  },
+  { collection: "users" },
+);
 
 // -- Indexes
 
-
 // -- Model
-var OrganizationUser = User.discriminator(
-    'OrganizationUser', organizationSchema
+const OrganizationUser = User.discriminator(
+  "OrganizationUser",
+  organizationSchema,
 );
 
-exports.schema = organizationSchema
-exports.model = OrganizationUser
+exports.schema = organizationSchema;
+exports.model = OrganizationUser;

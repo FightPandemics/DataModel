@@ -1,41 +1,40 @@
 // -- Imports
-const mongoose = require("mongoose")
-const locationSchema = require("./location").schema
+const { Schema, model, ObjectId } = require("mongoose");
+const locationSchema = require("./location").schema;
 
 // -- Schema
-var authorSchema = new mongoose.Schema({
-    authorId: {
-        type: mongoose.ObjectId,
-        ref: 'User',
-        required: true
-    },
-    authorName: {
-        type: String,
-        required: true
-    },
-    authorType: {
-        type: String,
-        required: true,
-        lowercase: true,
-        trim: true,
-        enum: [
-            "company",
-            "community",
-            "government",
-            "health care provider",
-            "individual",
-            "non-profit",
-            "other",
-            "r&D",
-            "startup",
-            "university"
-        ]
-    },
-    location: locationSchema
-})
+const authorSchema = new Schema({
+  authorId: {
+    ref: "User",
+    required: true,
+    type: ObjectId,
+  },
+  authorName: {
+    required: true,
+    type: String,
+  },
+  authorType: {
+    enum: [
+      "Company",
+      "Community",
+      "Government",
+      "Health care provider",
+      "Individual",
+      "Non-profit",
+      "Other",
+      "R&D",
+      "Startup",
+      "University",
+    ],
+    required: true,
+    trim: true,
+    type: String,
+  },
+  location: locationSchema,
+});
 
 // -- Model
-var Author = mongoose.model('Author', authorSchema)
+const Author = model("Author", authorSchema);
 
-exports.schema = authorSchema
-exports.model = Author
+exports.schema = authorSchema;
+exports.model = Author;
