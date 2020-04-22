@@ -1,12 +1,12 @@
 {
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
-    "code": "",
-    "lastModifTS": "2020-04-18T16:05:29.440Z",
+    "code": "FightPandemics",
+    "lastModifTS": "2020-04-22T22:01:23.505Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
-    "author": "",
+    "author": "Nícolas de Araujo",
     "version": "2",
     "collections": [
         {
@@ -3524,7 +3524,7 @@
     "creationTS": "2020-04-16T06:49:28.900Z",
     "hackoladeMeta": {
         "validationErrors": {
-            "modelName": false
+            "code": false
         }
     },
     "isCreatedByPlugin": true,
