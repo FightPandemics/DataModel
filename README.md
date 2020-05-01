@@ -13,6 +13,8 @@ Repository holding the data model specified as json document, json schema and wi
 The data model is versioned, with the current live version being [v1](/v1) and with [v2](/v2) being produced.
 <br />
 
+The HTML documentation is hosted at Github Pages at the following URL: https://fightpandemics.github.io/DataModel/
+
 ## Diagram for the Data Model v2
 
 <p align="center">
@@ -22,7 +24,7 @@ The data model is versioned, with the current live version being [v1](/v1) and w
 
 # Documentation
 
-The documentation can be found in [HTML](v2/docs/FightPandemics_documentation.html) and [PDF](v2/docs/FightPandemics_documentation.pdf). The HTML live version is highly recommended.
+The documentation can be found in [HTML](https://fightpandemics.github.io/DataModel/) and [PDF](v2/docs/FightPandemics_documentation.pdf). The HTML live version is highly recommended.
 
 There is also an [excel spreadsheet version](v2/docs/FightPandemics.xlsx).
 
@@ -53,7 +55,7 @@ The users can be of **two types**: **(1) Individual**, representing a private us
 
 The field 'type' is used to differentiate between the two subschemas, with 'individual' representing private user accounts and "Community", "Government", "Health care provider", "Non-profit", "Other", "R&D", "Startup", "Traditional Company" and "University".
 
-For more detailed information, please visit the [documentation](v2/docs/FightPandemics_documentation.html).
+For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
 
 <br />
 <p align="center">
@@ -65,7 +67,7 @@ For more detailed information, please visit the [documentation](v2/docs/FightPan
 
 Document to represent a post, asking or offering help to be displayed on the feed. A post can be created by any user, wether it is an individual or an organization. A post can have it's visibility limited geographically and have an expiration date set.
 
-For more detailed information, please visit the [documentation](v2/docs/FightPandemics_documentation.html).
+For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
 
 <br />
 <p align="center">
@@ -77,7 +79,7 @@ For more detailed information, please visit the [documentation](v2/docs/FightPan
 
 Document that represents a comment made at a post. A comment can be made by an individual user or an organization.
 
-For more detailed information, please visit the [documentation](v2/docs/FightPandemics_documentation.html).
+For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
 
 <br />
 <p align="center">
@@ -89,7 +91,7 @@ For more detailed information, please visit the [documentation](v2/docs/FightPan
 
 Document that represents a feedback sent by an user, logged or not.
 
-For more detailed information, please visit the [documentation](v2/docs/FightPandemics_documentation.html).
+For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
 
 <br />
 <p align="center">
