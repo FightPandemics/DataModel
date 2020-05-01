@@ -7,11 +7,11 @@ const { model: Comment } = require("./comment");
 // -- Schema
 function updateAuthorFirstNameReferences(firstName) {
   Post.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorName": `${firstName} ${this.lastName}` } },
   );
   Comment.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorName": `${firstName} ${this.lastName}` } },
   );
 
@@ -19,11 +19,11 @@ function updateAuthorFirstNameReferences(firstName) {
 }
 function updateAuthorLastNameReferences(lastName) {
   Post.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorName": `${this.firstName} ${lastName}` } },
   );
   Comment.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorName": `${this.firstName} ${lastName}` } },
   );
 

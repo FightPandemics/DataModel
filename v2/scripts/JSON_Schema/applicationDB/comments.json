@@ -22,15 +22,15 @@
         "author": {
             "type": "object",
             "properties": {
-                "authorId": {
+                "id": {
                     "type": "string",
                     "description": "Foreign key to the user who created the post.",
                     "pattern": "^[a-fA-F0-9]{24}$"
                 },
-                "authorName": {
+                "name": {
                     "type": "string"
                 },
-                "authorType": {
+                "type": {
                     "type": "string"
                 },
                 "location": {
@@ -96,9 +96,9 @@
             },
             "additionalProperties": false,
             "required": [
-                "authorId",
-                "authorName",
-                "authorType",
+                "id",
+                "name",
+                "type",
                 "location"
             ]
         },

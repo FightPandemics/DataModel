@@ -25,11 +25,11 @@ const userSchema = new Schema(
 // -- Methods
 function updateAuthorLocationReference(location) {
   Post.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.location": location } },
   );
   Comment.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.location": location } },
   );
 

@@ -7,11 +7,11 @@ const { model: Comment } = require("./comment");
 // -- Schema
 function updateAuthorNameReferences(name) {
   Post.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorName": name } },
   );
   Comment.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorName": name } },
   );
 
@@ -20,11 +20,11 @@ function updateAuthorNameReferences(name) {
 
 function updateAuthorTypeReferences(type) {
   Post.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorType": type } },
   );
   Comment.where(
-    { "author.authorId": this._id },
+    { "author.id": this._id },
     { $set: { "author.authorType": type } },
   );
 

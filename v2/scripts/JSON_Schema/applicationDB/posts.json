@@ -27,15 +27,15 @@
         "author": {
             "type": "object",
             "properties": {
-                "authorId": {
+                "id": {
                     "type": "string",
                     "description": "Foreign key to the user who created the post.",
                     "pattern": "^[a-fA-F0-9]{24}$"
                 },
-                "authorName": {
+                "name": {
                     "type": "string"
                 },
-                "authorType": {
+                "type": {
                     "type": "string"
                 },
                 "location": {
@@ -101,9 +101,9 @@
             },
             "additionalProperties": false,
             "required": [
-                "authorId",
-                "authorName",
-                "authorType",
+                "id",
+                "name",
+                "type",
                 "location"
             ]
         },
@@ -166,66 +166,6 @@
                 ]
             }
         },
-        "location": {
-            "type": "object",
-            "properties": {
-                "coordinates": {
-                    "type": "array",
-                    "additionalItems": true,
-                    "minItems": 2,
-                    "maxItems": 2,
-                    "uniqueItems": false,
-                    "description": "Array with the coordinates, specifying **longitude first** and **latitude second**, as default in the [GeoJSON](https://docs.mongodb.com/manual/reference/geojson/) definition.",
-                    "items": [
-                        {
-                            "type": "number",
-                            "minimum": -180,
-                            "maximum": 180,
-                            "default": 0,
-                            "description": "Location longitude\n",
-                            "id": "lng"
-                        },
-                        {
-                            "type": "number",
-                            "minimum": -90,
-                            "maximum": 90,
-                            "default": 0,
-                            "description": "Location latitude\n",
-                            "id": "lat"
-                        }
-                    ]
-                },
-                "type": {
-                    "type": "string",
-                    "enum": [
-                        "Point"
-                    ],
-                    "description": "Type of the GeoJSON Object.\nPlease refer to the [official documentation](https://docs.mongodb.com/manual/reference/geojson/ ) for more information.\n\n**In our case, the value will always be of the type \"Point\".**"
-                },
-                "country": {
-                    "type": "string",
-                    "description": "String holding the country's name.\n"
-                },
-                "city": {
-                    "type": "string",
-                    "description": "String holding the city's name."
-                },
-                "neighborhood": {
-                    "type": "string",
-                    "description": "String holding the neighborhood's name."
-                },
-                "address": {
-                    "type": "string",
-                    "description": "String holding the address (street, number and other details)."
-                }
-            },
-            "additionalProperties": false,
-            "description": "Location document according to the norms of a [GeoJSON Object](https://docs.mongodb.com/manual/reference/geojson/ ).\nThe fields address, neighborhood, city, state and country are added to store the result of the geoprocessing.",
-            "required": [
-                "coordinates",
-                "type"
-            ]
-        },
         "language": {
             "type": "array",
             "additionalItems": true,
@@ -265,6 +205,7 @@
         "title",
         "content",
         "objective",
-        "visibility"
+        "visibility",
+        "likes"
     ]
 }

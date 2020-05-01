@@ -28,10 +28,6 @@ db.createCollection( "users",{
                     "bsonType": "string",
                     "description": "String holding the authentication service id (Auth0).\n\nThis field is a **foreign key to the user in the Auth0 database**, connecting through the user_id field."
                 },
-                "email": {
-                    "bsonType": "string",
-                    "description": "User's email validated by a regex pattern."
-                },
                 "location": {
                     "bsonType": "object",
                     "description": "Location document according to the norms of a [GeoJSON Object](https://docs.mongodb.com/manual/reference/geojson/ ).\nThe fields address, neighborhood, city, state and country are added to store the result of the geoprocessing.",
@@ -300,12 +296,40 @@ db.createCollection( "users",{
                     ]
                 }
             ],
+            "anyOf": [
+                {
+                    "bsonType": "object",
+                    "description": "Case where the user comes from social networks with a registration that uses email. In this case, the email field is required. This case covers the great majority of currently supported social network authentications.",
+                    "properties": {
+                        "email": {
+                            "bsonType": "string",
+                            "description": "User's email validated by a regex pattern."
+                        }
+                    },
+                    "additionalProperties": true,
+                    "required": [
+                        "email"
+                    ]
+                },
+                {
+                    "bsonType": "object",
+                    "description": "Case where the user comes from social networks with a registration that allows the use of only the phone. In this case, the phone field is required, and the email isn't. \n\nAn example of ocial network that falls into this case is Twitter.",
+                    "properties": {
+                        "phone": {
+                            "bsonType": "string"
+                        }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                        "phone"
+                    ]
+                }
+            ],
             "required": [
                 "createdAt",
                 "_id",
                 "updatedAt",
-                "authId",
-                "email"
+                "authId"
             ]
         }
     },

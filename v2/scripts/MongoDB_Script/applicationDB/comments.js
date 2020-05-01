@@ -26,14 +26,14 @@ db.createCollection( "comments",{
                 "author": {
                     "bsonType": "object",
                     "properties": {
-                        "authorId": {
+                        "id": {
                             "bsonType": "objectId",
                             "description": "Foreign key to the user who created the post."
                         },
-                        "authorName": {
+                        "name": {
                             "bsonType": "string"
                         },
-                        "authorType": {
+                        "type": {
                             "bsonType": "string"
                         },
                         "location": {
@@ -95,9 +95,9 @@ db.createCollection( "comments",{
                     },
                     "additionalProperties": false,
                     "required": [
-                        "authorId",
-                        "authorName",
-                        "authorType"
+                        "id",
+                        "name",
+                        "type"
                     ]
                 },
                 "postId": {

@@ -3,7 +3,6 @@
     "_id": ObjectId("507f1f77bcf86cd799439011"),
     "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
     "authId": "Lorem",
-    "email": "test_user@fightpandemics.com",
     "location": {
         "coordinates": [
             35.26,
@@ -35,5 +34,6 @@
         "playstore": "http://playstore.com/myOrg",
         "appstore": "http://appstore.com/myOrg"
     },
-    "language": "Lorem"
+    "language": "Lorem",
+    "email": "test_user@fightpandemics.com"
 }

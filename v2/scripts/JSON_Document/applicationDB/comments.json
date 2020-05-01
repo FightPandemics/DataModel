@@ -3,9 +3,9 @@
     "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
     "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
     "author": {
-        "authorId": ObjectId("507f1f77bcf86cd799439011"),
-        "authorName": "Lorem",
-        "authorType": "Lorem",
+        "id": ObjectId("507f1f77bcf86cd799439011"),
+        "name": "Lorem",
+        "type": "Lorem",
         "location": {
             "coordinates": [
                 35.26,

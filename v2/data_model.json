@@ -2,7 +2,7 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "FightPandemics",
-    "lastModifTS": "2020-04-22T22:01:23.505Z",
+    "lastModifTS": "2020-05-01T16:51:25.713Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -580,12 +580,10 @@
                     "description": "Array holding the user_id of all the users who liked the post.",
                     "comments": "",
                     "dependencies": [],
-                    "required": false,
+                    "required": true,
                     "id": "",
                     "hackoladeMeta": {},
-                    "error": {
-                        "name": false
-                    }
+                    "error": {}
                 },
                 {
                     "code": "",
@@ -667,24 +665,6 @@
                     "error": {
                         "name": false
                     }
-                },
-                {
-                    "GUID": "611de7a0-8109-11ea-a764-5d61b98a5ce8",
-                    "type": "reference",
-                    "name": "location",
-                    "$ref": "#model/definitions/location",
-                    "refType": "model",
-                    "ref": "efec52d4-7fb2-11ea-ba73-c97a35e85484",
-                    "refIdPath": [
-                        "6b45e040-7fae-11ea-ba73-c97a35e85484",
-                        "6b460750-7fae-11ea-ba73-c97a35e85484",
-                        "efec52d4-7fb2-11ea-ba73-c97a35e85484"
-                    ],
-                    "required": false,
-                    "code": "",
-                    "primaryKey": false,
-                    "hackoladeMeta": {},
-                    "error": {}
                 },
                 {
                     "code": "",
@@ -1009,34 +989,6 @@
                     "error": {
                         "name": false
                     }
-                },
-                {
-                    "code": "",
-                    "required": true,
-                    "type": "string",
-                    "name": "email",
-                    "GUID": "efec52d1-7fb2-11ea-ba73-c97a35e85484",
-                    "primaryKey": false,
-                    "relationshipType": "",
-                    "parentRelationship": "",
-                    "foreignCollection": "",
-                    "foreignField": [],
-                    "childRelationships": [],
-                    "minLength": "",
-                    "maxLength": "",
-                    "pattern": "",
-                    "format": "email",
-                    "default": "",
-                    "enum": [],
-                    "sample": "test_user@fightpandemics.com",
-                    "description": "User's email validated by a regex pattern.",
-                    "comments": "",
-                    "dependencies": [],
-                    "id": "",
-                    "error": {
-                        "sample": false
-                    },
-                    "hackoladeMeta": {}
                 },
                 {
                     "GUID": "4a8675d0-80ea-11ea-a764-5d61b98a5ce8",
@@ -2029,6 +1981,94 @@
                     ],
                     "choice": "oneOf",
                     "GUID": "5f2b2880-82ef-11ea-821a-a1813ece7f73"
+                },
+                {
+                    "type": "choice",
+                    "properties": [
+                        {
+                            "GUID": "553729a1-8bc8-11ea-8bf8-cf9318f71002",
+                            "name": "subschema",
+                            "type": "subschema",
+                            "value": "",
+                            "properties": [
+                                {
+                                    "code": "",
+                                    "required": true,
+                                    "type": "string",
+                                    "name": "email",
+                                    "GUID": "efec52d1-7fb2-11ea-ba73-c97a35e85484",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "childRelationships": [],
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "",
+                                    "format": "email",
+                                    "default": "",
+                                    "enum": [],
+                                    "sample": "test_user@fightpandemics.com",
+                                    "description": "User's email validated by a regex pattern.",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "id": "",
+                                    "error": {
+                                        "sample": false
+                                    },
+                                    "hackoladeMeta": {}
+                                }
+                            ],
+                            "description": "Case where the user comes from social networks with a registration that uses email. In this case, the email field is required. This case covers the great majority of currently supported social network authentications.",
+                            "comments": "",
+                            "id": "emailPK",
+                            "additionalProperties": true,
+                            "hackoladeMeta": {},
+                            "error": {}
+                        },
+                        {
+                            "GUID": "6d920e70-8bc8-11ea-8bf8-cf9318f71002",
+                            "name": "subschema",
+                            "type": "subschema",
+                            "value": "",
+                            "properties": [
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [],
+                                    "sample": "",
+                                    "GUID": "720aec60-8bc8-11ea-8bf8-cf9318f71002",
+                                    "name": "phone",
+                                    "code": "",
+                                    "description": "",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {}
+                                }
+                            ],
+                            "description": "Case where the user comes from social networks with a registration that allows the use of only the phone. In this case, the phone field is required, and the email isn't. \n\nAn example of ocial network that falls into this case is Twitter.",
+                            "comments": "",
+                            "id": "phonePK",
+                            "additionalProperties": false,
+                            "error": {}
+                        }
+                    ],
+                    "choice": "anyOf",
+                    "GUID": "54fd06d0-8bc8-11ea-8bf8-cf9318f71002"
                 }
             ],
             "definitions": {
@@ -2624,7 +2664,6 @@
         "deadb930-8108-11ea-a764-5d61b98a5ce8": "likes",
         "1306e850-8109-11ea-a764-5d61b98a5ce8": "UserLikesPost",
         "04d0c120-8109-11ea-a764-5d61b98a5ce8": "likes",
-        "611de7a0-8109-11ea-a764-5d61b98a5ce8": "location",
         "56741420-810c-11ea-a764-5d61b98a5ce8": "externalLinks",
         "9693b433-7fb2-11ea-ba73-c97a35e85484": "appStore",
         "9693b43a-7fb2-11ea-ba73-c97a35e85484": "email",
@@ -2649,7 +2688,6 @@
         "09b06aeb-82f0-11ea-821a-a1813ece7f73": "urls",
         "09b06af5-82f0-11ea-821a-a1813ece7f73": "language",
         "09b06ae4-82f0-11ea-821a-a1813ece7f73": "authId",
-        "efec52d1-7fb2-11ea-ba73-c97a35e85484": "email",
         "09b06af3-82f0-11ea-821a-a1813ece7f73": "type",
         "587bc610-82f0-11ea-821a-a1813ece7f73": "type",
         "4a8675d0-80ea-11ea-a764-5d61b98a5ce8": "location",
@@ -2683,7 +2721,13 @@
         "f5f897a0-84b8-11ea-8f4d-0b62bb8cf8ca": "covidImpact",
         "3d427ab0-84b7-11ea-8f4d-0b62bb8cf8ca": "_id",
         "939a9470-84c0-11ea-929b-770c2f9d8801": "createdAt",
-        "97510cc0-84c0-11ea-929b-770c2f9d8801": "updatedAt"
+        "97510cc0-84c0-11ea-929b-770c2f9d8801": "updatedAt",
+        "553729a1-8bc8-11ea-8bf8-cf9318f71002": "subschema",
+        "efec52d1-7fb2-11ea-ba73-c97a35e85484": "email",
+        "720aec60-8bc8-11ea-8bf8-cf9318f71002": "phone",
+        "96938d21-7fb2-11ea-ba73-c97a35e85484": "id",
+        "a5ed67f0-811f-11ea-a764-5d61b98a5ce8": "name",
+        "eb7fe190-811e-11ea-a764-5d61b98a5ce8": "type"
     },
     "definitions": {
         "type": "definitions",
@@ -2940,10 +2984,6 @@
                     ],
                     [
                         "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                        "611de7a0-8109-11ea-a764-5d61b98a5ce8"
-                    ],
-                    [
-                        "96933f00-7fb2-11ea-ba73-c97a35e85484",
                         "ce5f8570-811e-11ea-a764-5d61b98a5ce8",
                         "e2868490-811e-11ea-a764-5d61b98a5ce8"
                     ],
@@ -2961,7 +3001,7 @@
                         "code": "",
                         "required": true,
                         "type": "objectId",
-                        "name": "authorId",
+                        "name": "id",
                         "GUID": "96938d21-7fb2-11ea-ba73-c97a35e85484",
                         "primaryKey": false,
                         "relationshipType": "Foreign Key",
@@ -2997,7 +3037,7 @@
                         "enum": [],
                         "sample": "",
                         "GUID": "a5ed67f0-811f-11ea-a764-5d61b98a5ce8",
-                        "name": "authorName",
+                        "name": "name",
                         "code": "",
                         "description": "",
                         "comments": "",
@@ -3025,7 +3065,7 @@
                         "enum": [],
                         "sample": "",
                         "GUID": "eb7fe190-811e-11ea-a764-5d61b98a5ce8",
-                        "name": "authorType",
+                        "name": "type",
                         "code": "",
                         "description": "",
                         "comments": "",
@@ -3113,40 +3153,40 @@
                 "erd": [
                     {
                         "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                        "x": 410.29683566050625,
-                        "y": 967.9746900983487,
+                        "x": 401.7839696445347,
+                        "y": 1026.1459412074887,
                         "width": 312,
-                        "height": 296,
+                        "height": 324,
                         "color": {
                             "hsl": {
-                                "h": 187.04225352112678,
-                                "s": 1,
-                                "l": 0.4176470588235294,
+                                "h": 290.8029197080292,
+                                "s": 0.631336405529954,
+                                "l": 0.42549019607843136,
                                 "a": 1
                             },
-                            "hex": "#00bcd5",
+                            "hex": "#9c28b1",
                             "rgb": {
-                                "r": 0,
-                                "g": 188,
-                                "b": 213,
+                                "r": 156,
+                                "g": 40,
+                                "b": 177,
                                 "a": 1
                             },
                             "hsv": {
-                                "h": 187.04225352112678,
-                                "s": 1,
-                                "v": 0.8352941176470589,
+                                "h": 290.8029197080292,
+                                "s": 0.7740112994350282,
+                                "v": 0.6941176470588235,
                                 "a": 1
                             },
-                            "oldHue": 206.57142857142858,
+                            "oldHue": 187.04225352112678,
                             "source": "hex"
                         }
                     },
                     {
                         "GUID": "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 807.6312658903918,
-                        "y": 135.33333333333331,
-                        "width": 284,
-                        "height": 548,
+                        "x": 901.2727920660797,
+                        "y": 437.54007690032466,
+                        "width": 304,
+                        "height": 478,
                         "color": {
                             "hsl": {
                                 "h": 206.57142857142858,
@@ -3176,7 +3216,7 @@
                         "x": 396.0025658084544,
                         "y": 132.6666666666666,
                         "width": 325,
-                        "height": 730,
+                        "height": 814,
                         "color": {
                             "hsl": {
                                 "h": 339.7058823529412,
@@ -3204,10 +3244,32 @@
                     {
                         "GUID": "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
                         "x": 80,
-                        "y": 337.3333333333334,
+                        "y": 449.4194025436263,
                         "width": 284,
-                        "height": 254,
-                        "color": {}
+                        "height": 310,
+                        "color": {
+                            "hsl": {
+                                "h": 45.18218623481781,
+                                "s": 0.9919678714859438,
+                                "l": 0.5117647058823529,
+                                "a": 1
+                            },
+                            "hex": "#fec107",
+                            "rgb": {
+                                "r": 254,
+                                "g": 193,
+                                "b": 7,
+                                "a": 1
+                            },
+                            "hsv": {
+                                "h": 45.18218623481781,
+                                "s": 0.9724409448818897,
+                                "v": 0.996078431372549,
+                                "a": 1
+                            },
+                            "oldHue": 206.57142857142858,
+                            "source": "hex"
+                        }
                     }
                 ],
                 "buckets": [
@@ -3256,8 +3318,7 @@
                     "bd3573f2-7fb0-11ea-ba73-c97a35e85484",
                     "c3a69f70-7fb0-11ea-ba73-c97a35e85484",
                     "fede938b-7fb1-11ea-ba73-c97a35e85484",
-                    "9693b430-7fb2-11ea-ba73-c97a35e85484",
-                    "d15d27a0-7fb6-11ea-b6ca-71d27d0acee3"
+                    "9693b430-7fb2-11ea-ba73-c97a35e85484"
                 ],
                 "activeRelationship": "",
                 "selectedCollections": [],
@@ -3297,10 +3358,6 @@
                 ],
                 [
                     "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                    "9693b434-7fb2-11ea-ba73-c97a35e85484"
-                ],
-                [
-                    "96933f00-7fb2-11ea-ba73-c97a35e85484",
                     "9693b437-7fb2-11ea-ba73-c97a35e85484"
                 ],
                 [
@@ -3316,11 +3373,6 @@
                 [
                     "efec04b0-7fb2-11ea-ba73-c97a35e85484",
                     "efa3c380-80e3-11ea-a764-5d61b98a5ce8"
-                ],
-                [
-                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                    "4a8675d0-80ea-11ea-a764-5d61b98a5ce8",
-                    "efec52d4-7fb2-11ea-ba73-c97a35e85484"
                 ],
                 [
                     "efec04b0-7fb2-11ea-ba73-c97a35e85484",
@@ -3386,21 +3438,6 @@
                     "5f2b2880-82ef-11ea-821a-a1813ece7f73",
                     "5f6e24f0-82ef-11ea-821a-a1813ece7f73",
                     "efa3c380-80e3-11ea-a764-5d61b98a5ce8"
-                ],
-                [
-                    "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                    "db65c2f0-82f1-11ea-821a-a1813ece7f73",
-                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
-                ],
-                [
-                    "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                    "e79df740-82f1-11ea-821a-a1813ece7f73",
-                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
-                ],
-                [
-                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                    "5f2b2880-82ef-11ea-821a-a1813ece7f73",
-                    "5f6e24f0-82ef-11ea-821a-a1813ece7f73"
                 ],
                 [
                     "efec04b0-7fb2-11ea-ba73-c97a35e85484",

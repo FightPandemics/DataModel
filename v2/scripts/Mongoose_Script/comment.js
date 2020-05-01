@@ -44,7 +44,7 @@ commentSchema.index({
 commentSchema.index({ parentId: 1, createdAt: -1 });
 
 // Index for author's foreign key for lookup performance
-commentSchema.index({ "author.authorId": 1, createdAt: -1 });
+commentSchema.index({ "author.id": 1, createdAt: -1 });
 
 // Index for like's foreign key for lookup performance
 commentSchema.index({ likes: 1 });
