@@ -2,7 +2,7 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "FightPandemics",
-    "lastModifTS": "2020-05-01T16:51:25.713Z",
+    "lastModifTS": "2020-07-24T19:59:50.886Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -1501,13 +1501,62 @@
                                     "error": {
                                         "name": false
                                     }
+                                },
+                                {
+                                    "type": "timestamp",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "default": "",
+                                    "format": "",
+                                    "sample": "",
+                                    "GUID": "e42c9d50-cde7-11ea-92b9-f550a13a4875",
+                                    "name": "acceptedPrivacyAt",
+                                    "code": "",
+                                    "description": "",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "timestamp",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "default": "",
+                                    "format": "",
+                                    "sample": "",
+                                    "GUID": "288987b0-cde8-11ea-92b9-f550a13a4875",
+                                    "name": "acceptedTermsAt",
+                                    "code": "",
+                                    "description": "",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
                                 }
                             ],
                             "description": "Subschema representing a individual account.",
                             "comments": "",
                             "id": "individual",
                             "additionalProperties": true,
-                            "error": {}
+                            "error": {},
+                            "displayName": "subschema"
                         },
                         {
                             "GUID": "a43c95d0-82ef-11ea-821a-a1813ece7f73",
@@ -1976,7 +2025,8 @@
                             "comments": "",
                             "id": "organization",
                             "additionalProperties": false,
-                            "error": {}
+                            "error": {},
+                            "displayName": "subschema"
                         }
                     ],
                     "choice": "oneOf",
@@ -2025,7 +2075,8 @@
                             "id": "emailPK",
                             "additionalProperties": true,
                             "hackoladeMeta": {},
-                            "error": {}
+                            "error": {},
+                            "displayName": "subschema"
                         },
                         {
                             "GUID": "6d920e70-8bc8-11ea-8bf8-cf9318f71002",
@@ -2064,7 +2115,8 @@
                             "comments": "",
                             "id": "phonePK",
                             "additionalProperties": false,
-                            "error": {}
+                            "error": {},
+                            "displayName": "subschema"
                         }
                     ],
                     "choice": "anyOf",
@@ -2476,14 +2528,18 @@
             "relationshipType": "Foreign Key",
             "parentCollection": "96933f00-7fb2-11ea-ba73-c97a35e85484",
             "parentField": [
-                "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                "ae4f24b0-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "96933f00-7fb2-11ea-ba73-c97a35e85484",
+                    "ae4f24b0-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "1",
             "childCollection": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
             "childField": [
-                "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                "bd359b02-7fb0-11ea-ba73-c97a35e85484"
+                [
+                    "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
+                    "bd359b02-7fb0-11ea-ba73-c97a35e85484"
+                ]
             ],
             "childCardinality": "n"
         },
@@ -2495,15 +2551,19 @@
             "relationshipType": "Foreign Key",
             "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
             "parentField": [
-                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "n",
             "childCollection": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
             "childField": [
-                "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                "deadb930-8108-11ea-a764-5d61b98a5ce8",
-                "deb75620-8108-11ea-a764-5d61b98a5ce8"
+                [
+                    "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
+                    "deadb930-8108-11ea-a764-5d61b98a5ce8",
+                    "deb75620-8108-11ea-a764-5d61b98a5ce8"
+                ]
             ],
             "childCardinality": "n"
         },
@@ -2515,15 +2575,19 @@
             "relationshipType": "Foreign Key",
             "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
             "parentField": [
-                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "n",
             "childCollection": "96933f00-7fb2-11ea-ba73-c97a35e85484",
             "childField": [
-                "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                "04d0c120-8109-11ea-a764-5d61b98a5ce8",
-                "04dad340-8109-11ea-a764-5d61b98a5ce8"
+                [
+                    "96933f00-7fb2-11ea-ba73-c97a35e85484",
+                    "04d0c120-8109-11ea-a764-5d61b98a5ce8",
+                    "04dad340-8109-11ea-a764-5d61b98a5ce8"
+                ]
             ],
             "childCardinality": "n"
         },
@@ -2535,16 +2599,20 @@
             "relationshipType": "Foreign Key",
             "parentCollection": null,
             "parentField": [
-                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "1",
             "childCollection": "68a89cd0-8132-11ea-a764-5d61b98a5ce8",
             "childField": [
-                "68a89cd0-8132-11ea-a764-5d61b98a5ce8",
-                "f6ed4180-82ef-11ea-821a-a1813ece7f73",
-                "bf6dcc20-82ef-11ea-821a-a1813ece7f73",
-                "b4066f90-8132-11ea-a764-5d61b98a5ce8"
+                [
+                    "68a89cd0-8132-11ea-a764-5d61b98a5ce8",
+                    "f6ed4180-82ef-11ea-821a-a1813ece7f73",
+                    "bf6dcc20-82ef-11ea-821a-a1813ece7f73",
+                    "b4066f90-8132-11ea-a764-5d61b98a5ce8"
+                ]
             ],
             "childCardinality": "n",
             "lineSize": 2
@@ -2557,16 +2625,20 @@
             "relationshipType": "Foreign Key",
             "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
             "parentField": [
-                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "1",
             "childCollection": "96933f00-7fb2-11ea-ba73-c97a35e85484",
             "childField": [
-                "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                "db65c2f0-82f1-11ea-821a-a1813ece7f73",
-                "ce5f8570-811e-11ea-a764-5d61b98a5ce8",
-                "96938d21-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "96933f00-7fb2-11ea-ba73-c97a35e85484",
+                    "db65c2f0-82f1-11ea-821a-a1813ece7f73",
+                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8",
+                    "96938d21-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "childCardinality": "n",
             "lineSize": 2
@@ -2579,14 +2651,18 @@
             "relationshipType": "Foreign Key",
             "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
             "parentField": [
-                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "1",
             "childCollection": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
             "childField": [
-                "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                "deadb930-8108-11ea-a764-5d61b98a5ce8"
+                [
+                    "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
+                    "deadb930-8108-11ea-a764-5d61b98a5ce8"
+                ]
             ],
             "childCardinality": "1"
         },
@@ -2598,14 +2674,18 @@
             "relationshipType": "Foreign Key",
             "parentCollection": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
             "parentField": [
-                "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                "e5c2c520-7fb0-11ea-ba73-c97a35e85484"
+                [
+                    "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
+                    "e5c2c520-7fb0-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "1",
             "childCollection": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
             "childField": [
-                "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                "bd359b01-7fb0-11ea-ba73-c97a35e85484"
+                [
+                    "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
+                    "bd359b01-7fb0-11ea-ba73-c97a35e85484"
+                ]
             ],
             "childCardinality": "1"
         },
@@ -2617,14 +2697,18 @@
             "relationshipType": "Foreign Key",
             "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
             "parentField": [
-                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
             ],
             "parentCardinality": "1",
             "childCollection": "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
             "childField": [
-                "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
-                "ade31210-84b8-11ea-8f4d-0b62bb8cf8ca"
+                [
+                    "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
+                    "ade31210-84b8-11ea-8f4d-0b62bb8cf8ca"
+                ]
             ],
             "childCardinality": "1"
         }
@@ -2727,7 +2811,9 @@
         "720aec60-8bc8-11ea-8bf8-cf9318f71002": "phone",
         "96938d21-7fb2-11ea-ba73-c97a35e85484": "id",
         "a5ed67f0-811f-11ea-a764-5d61b98a5ce8": "name",
-        "eb7fe190-811e-11ea-a764-5d61b98a5ce8": "type"
+        "eb7fe190-811e-11ea-a764-5d61b98a5ce8": "type",
+        "e42c9d50-cde7-11ea-92b9-f550a13a4875": "acceptedPrivacyAt",
+        "288987b0-cde8-11ea-92b9-f550a13a4875": "acceptedTermsAt"
     },
     "definitions": {
         "type": "definitions",
@@ -3145,7 +3231,7 @@
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "4.0.1"
+        "version": "4.1.10"
     },
     "settings": {
         "centralPane": {
@@ -3274,44 +3360,9 @@
                 ],
                 "buckets": [
                     {
-                        "x": 48,
-                        "y": 70,
-                        "GUID": "6d3c5910-7fae-11ea-ba73-c97a35e85484"
-                    },
-                    {
-                        "x": 137,
-                        "y": 436,
-                        "GUID": "d93b54d0-7faf-11ea-ba73-c97a35e85484"
-                    },
-                    {
                         "x": 40,
                         "y": 92.6666666666666,
                         "GUID": "bd396b90-7fb0-11ea-ba73-c97a35e85484"
-                    },
-                    {
-                        "x": 40,
-                        "y": 376,
-                        "GUID": "d3377f30-7fb1-11ea-ba73-c97a35e85484"
-                    },
-                    {
-                        "x": 40,
-                        "y": 496,
-                        "GUID": "e9a11b50-7fb1-11ea-ba73-c97a35e85484"
-                    },
-                    {
-                        "x": 40,
-                        "y": 432,
-                        "GUID": "fee45fe0-7fb1-11ea-ba73-c97a35e85484"
-                    },
-                    {
-                        "x": 494.15295834780045,
-                        "y": 189.51640454543502,
-                        "GUID": "969cb4e0-7fb2-11ea-ba73-c97a35e85484"
-                    },
-                    {
-                        "x": 40,
-                        "y": 1099.0671634753458,
-                        "GUID": "efee9cc0-7fb2-11ea-ba73-c97a35e85484"
                     }
                 ],
                 "collapsedNodes": [
