@@ -35,5 +35,7 @@
         "appstore": "http://appstore.com/myOrg"
     },
     "language": "Lorem",
-    "email": "test_user@fightpandemics.com"
+    "email": "test_user@fightpandemics.com",
+    "acceptedPrivacyAt": Timestamp(1460127718,1),
+    "acceptedTermsAt": Timestamp(1460127718,1)
 }

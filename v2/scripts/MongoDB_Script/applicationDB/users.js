@@ -1,10 +1,7 @@
 use applicationDB;
 
-db.createCollection( "users",{
-    "storageEngine": {
-        "wiredTiger": {}
-    },
-    "capped": false,
+db.runCommand({
+    "collMod": "users",
     "validator": {
         "$jsonSchema": {
             "bsonType": "object",
@@ -91,6 +88,12 @@ db.createCollection( "users",{
                 "photo": {
                     "bsonType": "string",
                     "description": "URI with the location of the profile's photo."
+                },
+                "acceptedPrivacyAt": {
+                    "bsonType": "timestamp"
+                },
+                "acceptedTermsAt": {
+                    "bsonType": "timestamp"
                 }
             },
             "oneOf": [
@@ -329,7 +332,9 @@ db.createCollection( "users",{
                 "createdAt",
                 "_id",
                 "updatedAt",
-                "authId"
+                "authId",
+                "acceptedPrivacyAt",
+                "acceptedTermsAt"
             ]
         }
     },

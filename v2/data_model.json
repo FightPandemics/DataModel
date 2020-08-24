@@ -2,7 +2,7 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "FightPandemics",
-    "lastModifTS": "2020-07-24T19:59:50.886Z",
+    "lastModifTS": "2020-08-24T20:11:43.006Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -1501,54 +1501,6 @@
                                     "error": {
                                         "name": false
                                     }
-                                },
-                                {
-                                    "type": "timestamp",
-                                    "primaryKey": false,
-                                    "relationshipType": "",
-                                    "parentRelationship": "",
-                                    "childRelationships": [],
-                                    "foreignCollection": "",
-                                    "foreignField": [],
-                                    "default": "",
-                                    "format": "",
-                                    "sample": "",
-                                    "GUID": "e42c9d50-cde7-11ea-92b9-f550a13a4875",
-                                    "name": "acceptedPrivacyAt",
-                                    "code": "",
-                                    "description": "",
-                                    "comments": "",
-                                    "dependencies": [],
-                                    "required": true,
-                                    "id": "",
-                                    "hackoladeMeta": {},
-                                    "error": {
-                                        "name": false
-                                    }
-                                },
-                                {
-                                    "type": "timestamp",
-                                    "primaryKey": false,
-                                    "relationshipType": "",
-                                    "parentRelationship": "",
-                                    "childRelationships": [],
-                                    "foreignCollection": "",
-                                    "foreignField": [],
-                                    "default": "",
-                                    "format": "",
-                                    "sample": "",
-                                    "GUID": "288987b0-cde8-11ea-92b9-f550a13a4875",
-                                    "name": "acceptedTermsAt",
-                                    "code": "",
-                                    "description": "",
-                                    "comments": "",
-                                    "dependencies": [],
-                                    "required": true,
-                                    "id": "",
-                                    "hackoladeMeta": {},
-                                    "error": {
-                                        "name": false
-                                    }
                                 }
                             ],
                             "description": "Subschema representing a individual account.",
@@ -2121,6 +2073,54 @@
                     ],
                     "choice": "anyOf",
                     "GUID": "54fd06d0-8bc8-11ea-8bf8-cf9318f71002"
+                },
+                {
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "a04ee0f0-e644-11ea-a4f2-f91e5514bec6",
+                    "name": "acceptedPrivacyAt",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "timestamp",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "ab588050-e644-11ea-a4f2-f91e5514bec6",
+                    "name": "acceptedTermsAt",
+                    "code": "",
+                    "description": "",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
                 }
             ],
             "definitions": {
@@ -2812,8 +2812,8 @@
         "96938d21-7fb2-11ea-ba73-c97a35e85484": "id",
         "a5ed67f0-811f-11ea-a764-5d61b98a5ce8": "name",
         "eb7fe190-811e-11ea-a764-5d61b98a5ce8": "type",
-        "e42c9d50-cde7-11ea-92b9-f550a13a4875": "acceptedPrivacyAt",
-        "288987b0-cde8-11ea-92b9-f550a13a4875": "acceptedTermsAt"
+        "a04ee0f0-e644-11ea-a4f2-f91e5514bec6": "acceptedPrivacyAt",
+        "ab588050-e644-11ea-a4f2-f91e5514bec6": "acceptedTermsAt"
     },
     "definitions": {
         "type": "definitions",
@@ -3231,7 +3231,7 @@
         "pluginEngineVersion": "1.0.0"
     },
     "applicationInformation": {
-        "version": "4.1.10"
+        "version": "4.1.14"
     },
     "settings": {
         "centralPane": {
