@@ -9,13 +9,17 @@
 <br />
 
 Repository holding the data model specified as json document, json schema and with its html and pdf documentation.
+Release Notes:
 
-The data model is versioned, with the current live version being [v1](/v1) and with [v2](/v2) being produced.
+- [v1- Outdated](/v1) - First Data Model, used in the hackathon app
+- [v2 - Outdated](/v2) - Total rework of the data model into more organized and concise version.
+- [v3 - Current](/v3) - Added support for private messages
+
 <br />
 
 The HTML documentation is hosted at Github Pages at the following URL: https://fightpandemics.github.io/DataModel/
 
-## Diagram for the Data Model v2
+## Diagram for the Data Model v3
 
 <p align="center">
   <img width="650" src="images/diagram_model.png">
@@ -24,9 +28,9 @@ The HTML documentation is hosted at Github Pages at the following URL: https://f
 
 # Documentation
 
-The documentation can be found in [HTML](https://fightpandemics.github.io/DataModel/) and [PDF](v2/docs/FightPandemics_documentation.pdf). The HTML live version is highly recommended.
+The documentation can be found in [HTML](https://fightpandemics.github.io/DataModel/) and [PDF](v3/docs/FightPandemics_documentation.pdf). The HTML live version is highly recommended.
 
-There is also an [excel spreadsheet version](v2/docs/FightPandemics.xlsx).
+There is also an [excel spreadsheet version](v3/docs/FightPandemics.xlsx).
 
 <br />
 
@@ -39,9 +43,9 @@ There is also an [excel spreadsheet version](v2/docs/FightPandemics.xlsx).
 
 # Specifications and Scripts
 
-There are [JSON Document](v2/scripts/JSON_Document) and [JSON Schema](v2/scripts/JSON_Schema) representations.
+There are [JSON Document](v3/scripts/JSON_Document) and [JSON Schema](v3/scripts/JSON_Schema) representations.
 
-There are [MongoDB Scripts](v2/scripts/MongoDB_Script) available for collection creation, in JS with standard Mongo Shell flavor.
+There are [MongoDB Scripts](v3/scripts/MongoDB_Script) available for collection creation, in JS with standard Mongo Shell flavor.
 
 Mongoose scripts are in the roadmap for the near future.
 
@@ -96,5 +100,32 @@ For more detailed information, please visit the [documentation](https://fightpan
 <br />
 <p align="center">
   <img src="images/feedbacks_collection.png">
+</p>
+<br />
+
+
+## Threads
+
+Document that represents a conversation between users. The participants array was used to allow expansion for group chats in the future, while the status field is to be used for blocking or archiving conversations.
+
+For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
+
+<br />
+<p align="center">
+  <img src="images/threads_collection.png">
+</p>
+<br />
+
+
+## Messages
+
+Document that represents a mnessage sent by a user in a Message Thread. 
+The status field was thougth to be used in the future to allow flagging a message as edited or deleted. It is possible, but optional, to associate a post with the message, to be used as a "quotation" or "embedding" of the post when someone wants to talk about it. 
+
+For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
+
+<br />
+<p align="center">
+  <img src="images/messages_collection.png">
 </p>
 <br />
