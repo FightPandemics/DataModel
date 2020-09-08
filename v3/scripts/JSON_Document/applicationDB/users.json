@@ -1,0 +1,39 @@
+{
+    "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "authId": "Lorem",
+    "location": {
+        "coordinates": [
+            35.26,
+            -32.83
+        ],
+        "type": "Point",
+        "country": "Lorem",
+        "city": "Lorem",
+        "neighborhood": "Lorem",
+        "address": "Lorem"
+    },
+    "about": "Lorem",
+    "photo": "./resource.txt#frag01",
+    "type": "other",
+    "industry": "Lorem",
+    "ownerId": ObjectId("507f1f77bcf86cd799439011"),
+    "name": "Lorem",
+    "needs": {
+        "volunteers": true,
+        "donations": false,
+        "staff": false,
+        "other": false
+    },
+    "global": false,
+    "urls": {
+        "linkedin": "http://linkedin.com/in/myProfile",
+        "twitter": "http://twitter.com/myProfile",
+        "website": "http://mypersonalwebsite.com",
+        "playstore": "http://playstore.com/myOrg",
+        "appstore": "http://appstore.com/myOrg"
+    },
+    "language": "Lorem",
+    "email": "test_user@fightpandemics.com"
+}
