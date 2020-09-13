@@ -1,0 +1,41 @@
+{
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "expireAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "author": {
+        "id": ObjectId("507f1f77bcf86cd799439011"),
+        "name": "Lorem",
+        "type": "Lorem",
+        "location": {
+            "coordinates": [
+                35.26,
+                -32.83
+            ],
+            "type": "Point",
+            "country": "Lorem",
+            "city": "Lorem",
+            "neighborhood": "Lorem",
+            "address": "Lorem"
+        }
+    },
+    "title": "Lorem",
+    "content": "Lorem",
+    "objective": "offer",
+    "visibility": "worldwide",
+    "likes": [
+        ObjectId("507f1f77bcf86cd799439011")
+    ],
+    "types": [
+        "Groceries/Food"
+    ],
+    "language": [
+        "Lorem"
+    ],
+    "externalLinks": {
+        "email": "Lorem",
+        "website": "Lorem",
+        "playStore": "Lorem",
+        "appStore": "Lorem"
+    }
+}

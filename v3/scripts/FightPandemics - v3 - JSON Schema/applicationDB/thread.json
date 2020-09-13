@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "thread",
+    "description": "ObjectId that serves as primary key for the message thread.",
+    "additionalProperties": false,
+    "properties": {
+        "_id": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "createdAt": {
+            "type": "string",
+            "description": "Timestamp with the threads's creation date",
+            "format": "date-time"
+        },
+        "updatedAt": {
+            "type": "string",
+            "description": "Timestamp with the thread's update date",
+            "format": "date-time"
+        },
+        "status": {
+            "type": "string",
+            "description": "Curerent thread status, used to define archives, soft deletes and other conversation status. The statuses are:\n\n* **pending**: if the user didn't accept the message request yet\n* **blocked**: if the one of the user's blocked the other\n* **accepted**: message request was accepted and users exchange messages\n* **archived**: user archived the message thread\n",
+            "default": "pending",
+            "enum": [
+                "blocked",
+                "accepted",
+                "pending",
+                "archived"
+            ]
+        },
+        "participants": {
+            "type": "array",
+            "description": "Array of user reference's, containing the participants of the message thread.\n\nIt is modelled as an array to allow expansion to group chats in the future.",
+            "additionalItems": true,
+            "minItems": 2,
+            "uniqueItems": false,
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Foreign key to the user who created the post.",
+                        "pattern": "^[a-fA-F0-9]{24}$"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "User's name"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "User's type"
+                    },
+                    "newMessages": {
+                        "type": "boolean",
+                        "description": "Flag to indicate whether there are new messages since last time the user accessed the thread.",
+                        "default": false
+                    },
+                    "lastAccess": {
+                        "type": "string",
+                        "description": "Timestamp with the last time the user accessed the message thread.",
+                        "format": "date-time"
+                    },
+                    "photo": {
+                        "type": "string",
+                        "description": "URL with the user photo",
+                        "format": "uri"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "id",
+                    "name",
+                    "type",
+                    "newMessages",
+                    "lastAccess"
+                ]
+            }
+        }
+    },
+    "required": [
+        "_id",
+        "createdAt",
+        "updatedAt",
+        "status",
+        "participants"
+    ]
+}

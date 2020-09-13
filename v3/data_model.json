@@ -2,12 +2,12 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "FightPandemics",
-    "lastModifTS": "2020-09-13T03:32:12.170Z",
+    "lastModifTS": "2020-09-13T04:21:53.198Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
     "author": "Nícolas de Araujo",
-    "version": "3",
+    "version": "3.1",
     "collections": [
         {
             "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
@@ -300,7 +300,8 @@
                     "relationshipType": "",
                     "parentRelationship": "",
                     "childRelationships": [
-                        "c11beb00-7fb2-11ea-ba73-c97a35e85484"
+                        "c11beb00-7fb2-11ea-ba73-c97a35e85484",
+                        "37616fe0-f576-11ea-9116-dd5dc4a8999a"
                     ],
                     "foreignCollection": "",
                     "foreignField": [],
@@ -920,7 +921,8 @@
                         "db833600-82f1-11ea-821a-a1813ece7f73",
                         "10f59d50-82f2-11ea-821a-a1813ece7f73",
                         "dda294d0-84b8-11ea-8f4d-0b62bb8cf8ca",
-                        "1cc36b20-f571-11ea-bd96-cde8cae0469c"
+                        "1cc36b20-f571-11ea-bd96-cde8cae0469c",
+                        "8d5ae880-f577-11ea-9116-dd5dc4a8999a"
                     ],
                     "foreignCollection": "",
                     "foreignField": [],
@@ -2456,7 +2458,8 @@
                     "relationshipType": "",
                     "parentRelationship": "",
                     "childRelationships": [
-                        "8ad49d90-efaa-11ea-a722-4d53fdda74f6"
+                        "8ad49d90-efaa-11ea-a722-4d53fdda74f6",
+                        "390c6b50-f577-11ea-9116-dd5dc4a8999a"
                     ],
                     "foreignCollection": "",
                     "foreignField": [],
@@ -3051,6 +3054,855 @@
                     "collectionName": false
                 }
             }
+        },
+        {
+            "GUID": "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+            "collectionName": "notifications",
+            "code": "",
+            "type": "object",
+            "description": "",
+            "comments": "",
+            "$schema": "",
+            "additionalProperties": true,
+            "properties": [
+                {
+                    "type": "objectId",
+                    "format": "",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "sample": "",
+                    "GUID": "2817d250-f575-11ea-9116-dd5dc4a8999a",
+                    "name": "_id",
+                    "code": "",
+                    "description": "Automatically generated object_id as primary key.",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "2e0b6960-f575-11ea-9116-dd5dc4a8999a",
+                    "name": "createdAt",
+                    "code": "",
+                    "description": "Timestamp with the notification's creation date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "3a53a340-f575-11ea-9116-dd5dc4a8999a",
+                    "name": "updatedAt",
+                    "code": "",
+                    "description": "Timestamp with the notification's last update date",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "20e4cb80-f577-11ea-9116-dd5dc4a8999a",
+                    "name": "sentAt",
+                    "code": "",
+                    "description": "Timestamp of when the notification was sent ",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {}
+                },
+                {
+                    "type": "date",
+                    "primaryKey": false,
+                    "relationshipType": "",
+                    "parentRelationship": "",
+                    "childRelationships": [],
+                    "foreignCollection": "",
+                    "foreignField": [],
+                    "default": "",
+                    "format": "",
+                    "sample": "",
+                    "GUID": "4d86a570-f575-11ea-9116-dd5dc4a8999a",
+                    "name": "seenAt",
+                    "code": "",
+                    "description": "Timestamp with the time the notification was seen by the user",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": false,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
+                    "type": "document",
+                    "primaryKey": false,
+                    "properties": [
+                        {
+                            "code": "",
+                            "required": true,
+                            "type": "objectId",
+                            "name": "id",
+                            "GUID": "6dc99e51-f575-11ea-9116-dd5dc4a8999a",
+                            "primaryKey": false,
+                            "relationshipType": "Foreign Key",
+                            "parentRelationship": "5c7645f0-7fb3-11ea-ba73-c97a35e85484",
+                            "foreignCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                            "foreignField": [
+                                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                            ],
+                            "childRelationships": [],
+                            "format": "",
+                            "sample": "",
+                            "description": "Foreign key to the user who created the post.",
+                            "comments": "",
+                            "dependencies": [],
+                            "id": "",
+                            "error": {},
+                            "hackoladeMeta": {}
+                        },
+                        {
+                            "type": "string",
+                            "minLength": "",
+                            "maxLength": "",
+                            "pattern": "",
+                            "format": "",
+                            "default": "",
+                            "primaryKey": false,
+                            "relationshipType": "",
+                            "parentRelationship": "",
+                            "childRelationships": [],
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "enum": [],
+                            "sample": "",
+                            "GUID": "6dc99e53-f575-11ea-9116-dd5dc4a8999a",
+                            "name": "name",
+                            "code": "",
+                            "description": "Sender user's name",
+                            "comments": "",
+                            "dependencies": [],
+                            "required": true,
+                            "id": "",
+                            "hackoladeMeta": {},
+                            "error": {
+                                "name": false
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "minLength": "",
+                            "maxLength": "",
+                            "pattern": "",
+                            "format": "",
+                            "default": "",
+                            "primaryKey": false,
+                            "relationshipType": "",
+                            "parentRelationship": "",
+                            "childRelationships": [],
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "enum": [],
+                            "sample": "",
+                            "GUID": "6dc99e54-f575-11ea-9116-dd5dc4a8999a",
+                            "name": "type",
+                            "code": "",
+                            "description": "Sender user's type",
+                            "comments": "",
+                            "dependencies": [],
+                            "required": true,
+                            "id": "",
+                            "hackoladeMeta": {},
+                            "error": {
+                                "name": false
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "minLength": "",
+                            "maxLength": "",
+                            "pattern": "",
+                            "format": "uri",
+                            "default": "",
+                            "primaryKey": false,
+                            "relationshipType": "",
+                            "parentRelationship": "",
+                            "childRelationships": [],
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "enum": [],
+                            "sample": "",
+                            "GUID": "fe582630-f575-11ea-9116-dd5dc4a8999a",
+                            "name": "photo",
+                            "code": "",
+                            "description": "Sender user's photo url",
+                            "comments": "",
+                            "dependencies": [],
+                            "required": false,
+                            "id": "",
+                            "hackoladeMeta": {},
+                            "error": {
+                                "name": false
+                            }
+                        }
+                    ],
+                    "dependencies": [],
+                    "minProperties": "",
+                    "maxProperties": "",
+                    "additionalProperties": false,
+                    "enum": [],
+                    "GUID": "66aec550-f575-11ea-9116-dd5dc4a8999a",
+                    "name": "sender",
+                    "code": "",
+                    "description": "Document with the user the info from the user that triggered the notification",
+                    "comments": "",
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    },
+                    "parentRelationship": "",
+                    "childRelationships": []
+                },
+                {
+                    "type": "document",
+                    "primaryKey": false,
+                    "properties": [
+                        {
+                            "code": "",
+                            "required": true,
+                            "type": "objectId",
+                            "name": "id",
+                            "GUID": "8c534e71-f575-11ea-9116-dd5dc4a8999a",
+                            "primaryKey": false,
+                            "relationshipType": "Foreign Key",
+                            "parentRelationship": "8c534e72-f575-11ea-9116-dd5dc4a8999a",
+                            "foreignCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                            "foreignField": [
+                                "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                                "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                            ],
+                            "childRelationships": [],
+                            "format": "",
+                            "sample": "",
+                            "description": "Foreign key to the user who created the post.",
+                            "comments": "",
+                            "dependencies": [],
+                            "id": "",
+                            "error": {},
+                            "hackoladeMeta": {}
+                        },
+                        {
+                            "type": "string",
+                            "minLength": "",
+                            "maxLength": "",
+                            "pattern": "",
+                            "format": "",
+                            "default": "",
+                            "primaryKey": false,
+                            "relationshipType": "",
+                            "parentRelationship": "",
+                            "childRelationships": [],
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "enum": [],
+                            "sample": "",
+                            "GUID": "8c534e73-f575-11ea-9116-dd5dc4a8999a",
+                            "name": "name",
+                            "code": "",
+                            "description": "Receiver user's name\n",
+                            "comments": "",
+                            "dependencies": [],
+                            "required": true,
+                            "id": "",
+                            "hackoladeMeta": {},
+                            "error": {
+                                "name": false
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "minLength": "",
+                            "maxLength": "",
+                            "pattern": "",
+                            "format": "",
+                            "default": "",
+                            "primaryKey": false,
+                            "relationshipType": "",
+                            "parentRelationship": "",
+                            "childRelationships": [],
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "enum": [],
+                            "sample": "",
+                            "GUID": "8c534e74-f575-11ea-9116-dd5dc4a8999a",
+                            "name": "type",
+                            "code": "",
+                            "description": "Receiver user's type",
+                            "comments": "",
+                            "dependencies": [],
+                            "required": true,
+                            "id": "",
+                            "hackoladeMeta": {},
+                            "error": {
+                                "name": false
+                            }
+                        },
+                        {
+                            "type": "string",
+                            "minLength": "",
+                            "maxLength": "",
+                            "pattern": "",
+                            "format": "uri",
+                            "default": "",
+                            "primaryKey": false,
+                            "relationshipType": "",
+                            "parentRelationship": "",
+                            "childRelationships": [],
+                            "foreignCollection": "",
+                            "foreignField": [],
+                            "enum": [],
+                            "sample": "",
+                            "GUID": "0cba8d80-f576-11ea-9116-dd5dc4a8999a",
+                            "name": "photo",
+                            "code": "",
+                            "description": "Receiver user's photo url",
+                            "comments": "",
+                            "dependencies": [],
+                            "required": false,
+                            "id": "",
+                            "hackoladeMeta": {},
+                            "error": {
+                                "name": false
+                            }
+                        }
+                    ],
+                    "dependencies": [],
+                    "minProperties": "",
+                    "maxProperties": "",
+                    "additionalProperties": false,
+                    "enum": [],
+                    "GUID": "8c534e70-f575-11ea-9116-dd5dc4a8999a",
+                    "name": "receiver",
+                    "code": "",
+                    "description": "Document with the user the info from the user that is receivin the notification",
+                    "comments": "",
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    },
+                    "parentRelationship": "",
+                    "childRelationships": []
+                },
+                {
+                    "type": "choice",
+                    "properties": [
+                        {
+                            "GUID": "9bd137e1-f575-11ea-9116-dd5dc4a8999a",
+                            "name": "",
+                            "type": "subschema",
+                            "value": "",
+                            "properties": [
+                                {
+                                    "type": "objectId",
+                                    "format": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "Foreign Key",
+                                    "parentRelationship": "37616fe0-f576-11ea-9116-dd5dc4a8999a",
+                                    "childRelationships": [],
+                                    "foreignCollection": "96933f00-7fb2-11ea-ba73-c97a35e85484",
+                                    "foreignField": [
+                                        "96933f00-7fb2-11ea-ba73-c97a35e85484",
+                                        "ae4f24b0-7fb2-11ea-ba73-c97a35e85484"
+                                    ],
+                                    "sample": "",
+                                    "GUID": "bf472130-f575-11ea-9116-dd5dc4a8999a",
+                                    "name": "postId",
+                                    "code": "",
+                                    "description": "",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "post",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [],
+                                    "sample": "",
+                                    "GUID": "8686aae0-f576-11ea-9116-dd5dc4a8999a",
+                                    "name": "type",
+                                    "code": "",
+                                    "description": "Type of notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [
+                                        "comment",
+                                        "like",
+                                        "share"
+                                    ],
+                                    "sample": "",
+                                    "GUID": "5000fed0-f576-11ea-9116-dd5dc4a8999a",
+                                    "name": "action",
+                                    "code": "",
+                                    "description": "Type of action that triggered the notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false,
+                                        "enum": false,
+                                        "enums": [
+                                            false,
+                                            false,
+                                            false
+                                        ]
+                                    }
+                                }
+                            ],
+                            "description": "Notification about a post you created",
+                            "comments": "",
+                            "id": "",
+                            "additionalProperties": true,
+                            "displayName": "PostNotification",
+                            "error": {
+                                "displayName": false
+                            }
+                        },
+                        {
+                            "GUID": "b6e10380-f575-11ea-9116-dd5dc4a8999a",
+                            "name": "(1)",
+                            "type": "subschema",
+                            "value": "",
+                            "properties": [
+                                {
+                                    "type": "objectId",
+                                    "format": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "sample": "",
+                                    "GUID": "5e999150-f576-11ea-9116-dd5dc4a8999a",
+                                    "name": "commentId",
+                                    "code": "",
+                                    "description": "ID of the comment where the notification was triggered",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "comment",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [],
+                                    "sample": "",
+                                    "GUID": "706896b0-f576-11ea-9116-dd5dc4a8999a",
+                                    "name": "type",
+                                    "code": "",
+                                    "description": "Type of notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [
+                                        "comment",
+                                        "like"
+                                    ],
+                                    "sample": "",
+                                    "GUID": "97727c30-f576-11ea-9116-dd5dc4a8999a",
+                                    "name": "action",
+                                    "code": "",
+                                    "description": "Type of action that triggered the notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false,
+                                        "enum": false,
+                                        "enums": [
+                                            false,
+                                            false
+                                        ]
+                                    }
+                                }
+                            ],
+                            "description": "Notification about a comment you created",
+                            "comments": "",
+                            "id": "",
+                            "additionalProperties": false,
+                            "displayName": "CommentNotification",
+                            "error": {
+                                "displayName": false
+                            },
+                            "hackoladeMeta": {}
+                        },
+                        {
+                            "GUID": "f3be1c10-f576-11ea-9116-dd5dc4a8999a",
+                            "name": "(2)",
+                            "type": "subschema",
+                            "value": "",
+                            "properties": [
+                                {
+                                    "type": "objectId",
+                                    "format": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "Foreign Key",
+                                    "parentRelationship": "390c6b50-f577-11ea-9116-dd5dc4a8999a",
+                                    "childRelationships": [],
+                                    "foreignCollection": "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
+                                    "foreignField": [
+                                        "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
+                                        "e6c8e090-efa8-11ea-a722-4d53fdda74f6"
+                                    ],
+                                    "sample": "",
+                                    "GUID": "078ee4e0-f577-11ea-9116-dd5dc4a8999a",
+                                    "name": "threadId",
+                                    "code": "",
+                                    "description": "ObjectId of the Thread that has new messages",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "message",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [],
+                                    "sample": "",
+                                    "GUID": "3c2236d0-f577-11ea-9116-dd5dc4a8999a",
+                                    "name": "type",
+                                    "code": "",
+                                    "description": "Type of notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [
+                                        "message"
+                                    ],
+                                    "sample": "",
+                                    "GUID": "4cbcb3d0-f577-11ea-9116-dd5dc4a8999a",
+                                    "name": "action",
+                                    "code": "",
+                                    "description": "Type of action that triggered the notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false,
+                                        "enum": false,
+                                        "enums": [
+                                            false
+                                        ]
+                                    }
+                                }
+                            ],
+                            "description": "Notification about private messages",
+                            "comments": "",
+                            "id": "",
+                            "additionalProperties": false,
+                            "displayName": "MessageNotification",
+                            "error": {
+                                "displayName": false
+                            },
+                            "hackoladeMeta": {}
+                        },
+                        {
+                            "GUID": "6abe6f40-f577-11ea-9116-dd5dc4a8999a",
+                            "name": "",
+                            "type": "subschema",
+                            "value": "",
+                            "properties": [
+                                {
+                                    "type": "objectId",
+                                    "format": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "Foreign Key",
+                                    "parentRelationship": "8d5ae880-f577-11ea-9116-dd5dc4a8999a",
+                                    "childRelationships": [],
+                                    "foreignCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                                    "foreignField": [
+                                        "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                                        "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                                    ],
+                                    "sample": "",
+                                    "GUID": "7895d4a0-f577-11ea-9116-dd5dc4a8999a",
+                                    "name": "organizationId",
+                                    "code": "",
+                                    "description": "ObjectId of the organization the action is about",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "organization",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [],
+                                    "sample": "",
+                                    "GUID": "90b81d40-f577-11ea-9116-dd5dc4a8999a",
+                                    "name": "type",
+                                    "code": "",
+                                    "description": "Type of notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "",
+                                    "format": "",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [
+                                        "join"
+                                    ],
+                                    "sample": "",
+                                    "GUID": "9f03ef50-f577-11ea-9116-dd5dc4a8999a",
+                                    "name": "action",
+                                    "code": "",
+                                    "description": "Type of action that triggered the notification",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": true,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false,
+                                        "enum": false,
+                                        "enums": [
+                                            false
+                                        ]
+                                    }
+                                }
+                            ],
+                            "description": "Notification about a organization you manage",
+                            "comments": "",
+                            "id": "",
+                            "additionalProperties": false,
+                            "displayName": "OrganizationNotification",
+                            "error": {
+                                "displayName": false
+                            }
+                        }
+                    ],
+                    "choice": "oneOf",
+                    "GUID": "9bad5c30-f575-11ea-9116-dd5dc4a8999a",
+                    "description": "OneOf that decides what type of notification is this, with the determinant factor being what it is about (a post, a comment, an organization and etc)"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "1b9ffcf0-f575-11ea-9116-dd5dc4a8999a"
+            },
+            "capped": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "size": "",
+            "max": "",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "key": "",
+                "hashed": false,
+                "unique": true,
+                "numInitialChunks": "",
+                "collation": "null",
+                "zone": "",
+                "comments": ""
+            },
+            "bucketId": "bd396b90-7fb0-11ea-ba73-c97a35e85484",
+            "hackoladeMeta": {
+                "validationErrors": {
+                    "collectionName": false
+                }
+            }
         }
     ],
     "buckets": [
@@ -3067,7 +3919,8 @@
                 "efec04b0-7fb2-11ea-ba73-c97a35e85484",
                 "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
                 "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
-                "da312720-efa8-11ea-a722-4d53fdda74f6"
+                "da312720-efa8-11ea-a722-4d53fdda74f6",
+                "1b9dda10-f575-11ea-9116-dd5dc4a8999a"
             ],
             "backgroundColor": {
                 "r": 156,
@@ -3324,6 +4177,105 @@
                 ]
             ],
             "childCardinality": "1"
+        },
+        {
+            "GUID": "8c534e72-f575-11ea-9116-dd5dc4a8999a",
+            "name": "Notification Receiver",
+            "description": "",
+            "comments": "",
+            "relationshipType": "Foreign Key",
+            "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+            "parentField": [
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childCollection": "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+            "childField": [
+                [
+                    "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+                    "8c534e70-f575-11ea-9116-dd5dc4a8999a",
+                    "8c534e71-f575-11ea-9116-dd5dc4a8999a"
+                ]
+            ],
+            "childCardinality": "1"
+        },
+        {
+            "GUID": "37616fe0-f576-11ea-9116-dd5dc4a8999a",
+            "name": "PostNotification",
+            "description": "",
+            "comments": "",
+            "relationshipType": "Foreign Key",
+            "parentCollection": "96933f00-7fb2-11ea-ba73-c97a35e85484",
+            "parentField": [
+                [
+                    "96933f00-7fb2-11ea-ba73-c97a35e85484",
+                    "ae4f24b0-7fb2-11ea-ba73-c97a35e85484"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childCollection": "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+            "childField": [
+                [
+                    "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+                    "9bad5c30-f575-11ea-9116-dd5dc4a8999a",
+                    "9bd137e1-f575-11ea-9116-dd5dc4a8999a",
+                    "bf472130-f575-11ea-9116-dd5dc4a8999a"
+                ]
+            ],
+            "childCardinality": "1"
+        },
+        {
+            "GUID": "390c6b50-f577-11ea-9116-dd5dc4a8999a",
+            "name": "MessageNotification",
+            "description": "",
+            "comments": "",
+            "relationshipType": "Foreign Key",
+            "parentCollection": "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
+            "parentField": [
+                [
+                    "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
+                    "e6c8e090-efa8-11ea-a722-4d53fdda74f6"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childCollection": "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+            "childField": [
+                [
+                    "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+                    "9bad5c30-f575-11ea-9116-dd5dc4a8999a",
+                    "f3be1c10-f576-11ea-9116-dd5dc4a8999a",
+                    "078ee4e0-f577-11ea-9116-dd5dc4a8999a"
+                ]
+            ],
+            "childCardinality": "1"
+        },
+        {
+            "GUID": "8d5ae880-f577-11ea-9116-dd5dc4a8999a",
+            "name": "OrganizationNotification",
+            "description": "",
+            "comments": "",
+            "relationshipType": "Foreign Key",
+            "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+            "parentField": [
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childCollection": "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+            "childField": [
+                [
+                    "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+                    "9bad5c30-f575-11ea-9116-dd5dc4a8999a",
+                    "6abe6f40-f577-11ea-9116-dd5dc4a8999a",
+                    "7895d4a0-f577-11ea-9116-dd5dc4a8999a"
+                ]
+            ],
+            "childCardinality": "1"
         }
     ],
     "users": [],
@@ -3450,7 +4402,39 @@
         "70677a90-efaa-11ea-a722-4d53fdda74f6": "content",
         "eb4659e0-f570-11ea-bd96-cde8cae0469c": "photo",
         "1cc36b20-f571-11ea-bd96-cde8cae0469c": "UserSentMessage",
-        "16b917c0-f571-11ea-bd96-cde8cae0469c": "authorId"
+        "16b917c0-f571-11ea-bd96-cde8cae0469c": "authorId",
+        "64ba0190-f572-11ea-9116-dd5dc4a8999a": "New view",
+        "0ba4cd30-f575-11ea-9116-dd5dc4a8999a": "",
+        "1b9dda10-f575-11ea-9116-dd5dc4a8999a": "notifications",
+        "2817d250-f575-11ea-9116-dd5dc4a8999a": "_id",
+        "2e0b6960-f575-11ea-9116-dd5dc4a8999a": "createdAt",
+        "3a53a340-f575-11ea-9116-dd5dc4a8999a": "updatedAt",
+        "4d86a570-f575-11ea-9116-dd5dc4a8999a": "seenAt",
+        "66aec550-f575-11ea-9116-dd5dc4a8999a": "sender",
+        "8c534e71-f575-11ea-9116-dd5dc4a8999a": "id",
+        "8c534e73-f575-11ea-9116-dd5dc4a8999a": "name",
+        "8c534e74-f575-11ea-9116-dd5dc4a8999a": "type",
+        "8c534e70-f575-11ea-9116-dd5dc4a8999a": "receiver",
+        "8c534e72-f575-11ea-9116-dd5dc4a8999a": "Notification Receiver",
+        "fe582630-f575-11ea-9116-dd5dc4a8999a": "photo",
+        "0cba8d80-f576-11ea-9116-dd5dc4a8999a": "photo",
+        "bf472130-f575-11ea-9116-dd5dc4a8999a": "postId",
+        "37616fe0-f576-11ea-9116-dd5dc4a8999a": "PostNotification",
+        "b6e10380-f575-11ea-9116-dd5dc4a8999a": "(1)",
+        "706896b0-f576-11ea-9116-dd5dc4a8999a": "type",
+        "8686aae0-f576-11ea-9116-dd5dc4a8999a": "type",
+        "97727c30-f576-11ea-9116-dd5dc4a8999a": "action",
+        "5000fed0-f576-11ea-9116-dd5dc4a8999a": "action",
+        "f3be1c10-f576-11ea-9116-dd5dc4a8999a": "(2)",
+        "078ee4e0-f577-11ea-9116-dd5dc4a8999a": "threadId",
+        "20e4cb80-f577-11ea-9116-dd5dc4a8999a": "sentAt",
+        "390c6b50-f577-11ea-9116-dd5dc4a8999a": "MessageNotification",
+        "3c2236d0-f577-11ea-9116-dd5dc4a8999a": "type",
+        "7895d4a0-f577-11ea-9116-dd5dc4a8999a": "organizationId",
+        "8d5ae880-f577-11ea-9116-dd5dc4a8999a": "OrganizationNotification",
+        "90b81d40-f577-11ea-9116-dd5dc4a8999a": "type",
+        "4cbcb3d0-f577-11ea-9116-dd5dc4a8999a": "action",
+        "9f03ef50-f577-11ea-9116-dd5dc4a8999a": "action"
     },
     "definitions": {
         "type": "definitions",
@@ -4020,7 +5004,7 @@
     "decorativeSymbols": [],
     "dbVersion": "v4.2",
     "dbVendor": "MongoDB",
-    "hideModelViews": true,
+    "hideModelViews": false,
     "appTarget": "MONGODB",
     "creationTS": "2020-04-16T06:49:28.900Z",
     "hackoladeMeta": {
@@ -4041,8 +5025,8 @@
                 "erd": [
                     {
                         "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                        "x": 401.78396964453475,
-                        "y": 973.479274540822,
+                        "x": 452.45063631120144,
+                        "y": 1024.1459412074887,
                         "width": 279,
                         "height": 324,
                         "color": {
@@ -4071,9 +5055,9 @@
                     },
                     {
                         "GUID": "96933f00-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 914.1064499034167,
-                        "y": 384.8734102336578,
-                        "width": 236,
+                        "x": 978.1064499034167,
+                        "y": 318.2067435669919,
+                        "width": 257,
                         "height": 366,
                         "color": {
                             "hsl": {
@@ -4101,8 +5085,8 @@
                     },
                     {
                         "GUID": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                        "x": 396.0025658084545,
-                        "y": 80,
+                        "x": 446.6692324751212,
+                        "y": 130.66666666666669,
                         "width": 347,
                         "height": 786,
                         "color": {
@@ -4131,8 +5115,8 @@
                     },
                     {
                         "GUID": "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
-                        "x": 80,
-                        "y": 396.7527358769597,
+                        "x": 130.66666666666669,
+                        "y": 447.41940254362635,
                         "width": 284,
                         "height": 310,
                         "color": {
@@ -4161,9 +5145,9 @@
                     },
                     {
                         "GUID": "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
-                        "x": 1279.144643191476,
-                        "y": 487.7155300718321,
-                        "width": 251,
+                        "x": 1329.8113098581427,
+                        "y": 538.3821967384988,
+                        "width": 272,
                         "height": 198,
                         "color": {
                             "hsl": {
@@ -4191,8 +5175,8 @@
                     },
                     {
                         "GUID": "da312720-efa8-11ea-a722-4d53fdda74f6",
-                        "x": 1313.5523390468857,
-                        "y": 147,
+                        "x": 1364.2190057135524,
+                        "y": 197.66666666666663,
                         "width": 231,
                         "height": 211,
                         "color": {
@@ -4218,12 +5202,42 @@
                             "oldHue": 290.8029197080292,
                             "source": "hex"
                         }
+                    },
+                    {
+                        "GUID": "1b9dda10-f575-11ea-9116-dd5dc4a8999a",
+                        "x": 998.5512040417086,
+                        "y": 1013.7587926837131,
+                        "width": 307,
+                        "height": 477,
+                        "color": {
+                            "hsl": {
+                                "h": 14.454545454545455,
+                                "s": 0.990990990990991,
+                                "l": 0.5647058823529412,
+                                "a": 1
+                            },
+                            "hex": "#fe5722",
+                            "rgb": {
+                                "r": 254,
+                                "g": 87,
+                                "b": 34,
+                                "a": 1
+                            },
+                            "hsv": {
+                                "h": 14.454545454545455,
+                                "s": 0.8661417322834646,
+                                "v": 0.996078431372549,
+                                "a": 1
+                            },
+                            "oldHue": 206.57142857142858,
+                            "source": "hex"
+                        }
                     }
                 ],
                 "buckets": [
                     {
-                        "x": 40,
-                        "y": 40,
+                        "x": 90.66666666666669,
+                        "y": 90.66666666666664,
                         "GUID": "bd396b90-7fb0-11ea-ba73-c97a35e85484"
                     }
                 ],

@@ -1,0 +1,220 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title": "notifications",
+    "additionalProperties": true,
+    "properties": {
+        "_id": {
+            "type": "string",
+            "description": "Automatically generated object_id as primary key.",
+            "pattern": "^[a-fA-F0-9]{24}$"
+        },
+        "createdAt": {
+            "type": "string",
+            "description": "Timestamp with the notification's creation date",
+            "format": "date-time"
+        },
+        "updatedAt": {
+            "type": "string",
+            "description": "Timestamp with the notification's last update date",
+            "format": "date-time"
+        },
+        "sentAt": {
+            "type": "string",
+            "description": "Timestamp of when the notification was sent ",
+            "format": "date-time"
+        },
+        "seenAt": {
+            "type": "string",
+            "description": "Timestamp with the time the notification was seen by the user",
+            "format": "date-time"
+        },
+        "sender": {
+            "type": "object",
+            "description": "Document with the user the info from the user that triggered the notification",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Foreign key to the user who created the post.",
+                    "pattern": "^[a-fA-F0-9]{24}$"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Sender user's name"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Sender user's type"
+                },
+                "photo": {
+                    "type": "string",
+                    "description": "Sender user's photo url",
+                    "format": "uri"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "name",
+                "type"
+            ]
+        },
+        "receiver": {
+            "type": "object",
+            "description": "Document with the user the info from the user that is receivin the notification",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "description": "Foreign key to the user who created the post.",
+                    "pattern": "^[a-fA-F0-9]{24}$"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Receiver user's name\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Receiver user's type"
+                },
+                "photo": {
+                    "type": "string",
+                    "description": "Receiver user's photo url",
+                    "format": "uri"
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "id",
+                "name",
+                "type"
+            ]
+        }
+    },
+    "oneOf": [
+        {
+            "type": "object",
+            "description": "Notification about a post you created",
+            "properties": {
+                "postId": {
+                    "type": "string",
+                    "pattern": "^[a-fA-F0-9]{24}$"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of notification",
+                    "pattern": "post"
+                },
+                "action": {
+                    "type": "string",
+                    "description": "Type of action that triggered the notification",
+                    "enum": [
+                        "comment",
+                        "like",
+                        "share"
+                    ]
+                }
+            },
+            "additionalProperties": true,
+            "required": [
+                "postId",
+                "type",
+                "action"
+            ]
+        },
+        {
+            "type": "object",
+            "description": "Notification about a comment you created",
+            "properties": {
+                "commentId": {
+                    "type": "string",
+                    "description": "ID of the comment where the notification was triggered",
+                    "pattern": "^[a-fA-F0-9]{24}$"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of notification",
+                    "pattern": "comment"
+                },
+                "action": {
+                    "type": "string",
+                    "description": "Type of action that triggered the notification",
+                    "enum": [
+                        "comment",
+                        "like"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "commentId",
+                "type",
+                "action"
+            ]
+        },
+        {
+            "type": "object",
+            "description": "Notification about private messages",
+            "properties": {
+                "threadId": {
+                    "type": "string",
+                    "description": "ObjectId of the Thread that has new messages",
+                    "pattern": "^[a-fA-F0-9]{24}$"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of notification",
+                    "pattern": "message"
+                },
+                "action": {
+                    "type": "string",
+                    "description": "Type of action that triggered the notification",
+                    "enum": [
+                        "message"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "threadId",
+                "type",
+                "action"
+            ]
+        },
+        {
+            "type": "object",
+            "description": "Notification about a organization you manage",
+            "properties": {
+                "organizationId": {
+                    "type": "string",
+                    "description": "ObjectId of the organization the action is about",
+                    "pattern": "^[a-fA-F0-9]{24}$"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Type of notification",
+                    "pattern": "organization"
+                },
+                "action": {
+                    "type": "string",
+                    "description": "Type of action that triggered the notification",
+                    "enum": [
+                        "join"
+                    ]
+                }
+            },
+            "additionalProperties": false,
+            "required": [
+                "organizationId",
+                "type",
+                "action"
+            ]
+        }
+    ],
+    "required": [
+        "_id",
+        "createdAt",
+        "updatedAt",
+        "sender",
+        "receiver"
+    ]
+}

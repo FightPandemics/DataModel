@@ -1,0 +1,22 @@
+{
+    "_id": ObjectId("507f1f77bcf86cd799439011"),
+    "createdAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "updatedAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "sentAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "seenAt": ISODate("2016-04-08T15:06:21.595Z"),
+    "sender": {
+        "id": ObjectId("507f1f77bcf86cd799439011"),
+        "name": "Lorem",
+        "type": "Lorem",
+        "photo": "./resource.txt#frag01"
+    },
+    "receiver": {
+        "id": ObjectId("507f1f77bcf86cd799439011"),
+        "name": "Lorem",
+        "type": "Lorem",
+        "photo": "./resource.txt#frag01"
+    },
+    "postId": ObjectId("507f1f77bcf86cd799439011"),
+    "type": "Lorem",
+    "action": "share"
+}

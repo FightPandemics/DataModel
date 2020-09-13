@@ -13,7 +13,7 @@ Release Notes:
 
 - [v1- Outdated](/v1) - First Data Model, used in the hackathon app
 - [v2 - Outdated](/v2) - Total rework of the data model into more organized and concise version.
-- [v3 - Current](/v3) - Added support for private messages
+- [v3 - Current](/v3) - Added support for private messages and notifications
 
 <br />
 
@@ -119,7 +119,7 @@ For more detailed information, please visit the [documentation](https://fightpan
 
 ## Messages
 
-Document that represents a mnessage sent by a user in a Message Thread. 
+Document that represents a message sent by a user in a Message Thread. 
 The status field was thougth to be used in the future to allow flagging a message as edited or deleted. It is possible, but optional, to associate a post with the message, to be used as a "quotation" or "embedding" of the post when someone wants to talk about it. 
 
 For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
@@ -127,5 +127,20 @@ For more detailed information, please visit the [documentation](https://fightpan
 <br />
 <p align="center">
   <img src="images/messages_collection.png">
+</p>
+<br />
+
+
+## Notifications
+
+Document that represents a notification in the application. 
+The oneOf determines which type of the notificaiton it is, defined by what it is about, whether a post, a comment, a private chat or an organization the user controls.
+The sentAt timestamp determines the time the notificaiton was sent to the user, and serves as control to wheter the notification was already sent. The seenAt timestamps, serves as a similar control tool, storing the time the user saw the notification.
+
+For more detailed information, please visit the [documentation](https://fightpandemics.github.io/DataModel/).
+
+<br />
+<p align="center">
+  <img src="images/notifications_collection.png">
 </p>
 <br />
