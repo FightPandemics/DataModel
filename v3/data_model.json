@@ -2,7 +2,7 @@
     "GUID": "6b45e040-7fae-11ea-ba73-c97a35e85484",
     "modelName": "FightPandemics",
     "code": "FightPandemics",
-    "lastModifTS": "2020-09-08T01:07:19.243Z",
+    "lastModifTS": "2020-09-13T03:32:12.170Z",
     "persistenceSchemaVersion": "4",
     "description": "",
     "comments": "",
@@ -202,14 +202,11 @@
                         }
                     ],
                     "primaryKey": false,
-                    "relationshipType": "Foreign Key",
-                    "parentRelationship": "10f59d50-82f2-11ea-821a-a1813ece7f73",
+                    "relationshipType": "",
+                    "parentRelationship": "",
                     "childRelationships": [],
-                    "foreignCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                    "foreignField": [
-                        "efec04b0-7fb2-11ea-ba73-c97a35e85484",
-                        "fa469f60-7fb2-11ea-ba73-c97a35e85484"
-                    ],
+                    "foreignCollection": "",
+                    "foreignField": [],
                     "additionalItems": true,
                     "minItems": "",
                     "maxItems": "",
@@ -922,7 +919,8 @@
                         "f71e1580-82ef-11ea-821a-a1813ece7f73",
                         "db833600-82f1-11ea-821a-a1813ece7f73",
                         "10f59d50-82f2-11ea-821a-a1813ece7f73",
-                        "dda294d0-84b8-11ea-8f4d-0b62bb8cf8ca"
+                        "dda294d0-84b8-11ea-8f4d-0b62bb8cf8ca",
+                        "1cc36b20-f571-11ea-bd96-cde8cae0469c"
                     ],
                     "foreignCollection": "",
                     "foreignField": [],
@@ -2538,7 +2536,6 @@
                     "foreignCollection": "",
                     "foreignField": [],
                     "enum": [
-                        "deleted",
                         "blocked",
                         "accepted",
                         "pending",
@@ -2548,7 +2545,7 @@
                     "GUID": "4f0ec160-efa9-11ea-a722-4d53fdda74f6",
                     "name": "status",
                     "code": "",
-                    "description": "Curerent thread status, used to define archives, soft deletes and other conversation status. The statuses are:\n\n* **pending**: if the user didn't accept the message request yet\n* **blocked**: if the one of the user's blocked the other\n* **accepted**: message request was accepted and users exchange messages\n* **archived**: user archived the message thread\n* **deleted**: user deleted the conversation",
+                    "description": "Curerent thread status, used to define archives, soft deletes and other conversation status. The statuses are:\n\n* **pending**: if the user didn't accept the message request yet\n* **blocked**: if the one of the user's blocked the other\n* **accepted**: message request was accepted and users exchange messages\n* **archived**: user archived the message thread\n",
                     "comments": "",
                     "dependencies": [],
                     "required": true,
@@ -2655,24 +2652,6 @@
                                     }
                                 },
                                 {
-                                    "GUID": "adce9595-efa9-11ea-a722-4d53fdda74f6",
-                                    "type": "reference",
-                                    "name": "location",
-                                    "$ref": "#model/definitions/location",
-                                    "refType": "model",
-                                    "ref": "efec52d4-7fb2-11ea-ba73-c97a35e85484",
-                                    "refIdPath": [
-                                        "6b45e040-7fae-11ea-ba73-c97a35e85484",
-                                        "6b460750-7fae-11ea-ba73-c97a35e85484",
-                                        "efec52d4-7fb2-11ea-ba73-c97a35e85484"
-                                    ],
-                                    "required": true,
-                                    "code": "",
-                                    "primaryKey": false,
-                                    "refDescription": "User's location",
-                                    "error": {}
-                                },
-                                {
                                     "type": "boolean",
                                     "default": "false",
                                     "enum": [],
@@ -2718,6 +2697,34 @@
                                     "id": "",
                                     "hackoladeMeta": {},
                                     "error": {}
+                                },
+                                {
+                                    "type": "string",
+                                    "minLength": "",
+                                    "maxLength": "",
+                                    "pattern": "",
+                                    "format": "uri",
+                                    "default": "",
+                                    "primaryKey": false,
+                                    "relationshipType": "",
+                                    "parentRelationship": "",
+                                    "childRelationships": [],
+                                    "foreignCollection": "",
+                                    "foreignField": [],
+                                    "enum": [],
+                                    "sample": "",
+                                    "GUID": "eb4659e0-f570-11ea-bd96-cde8cae0469c",
+                                    "name": "photo",
+                                    "code": "",
+                                    "description": "URL with the user photo",
+                                    "comments": "",
+                                    "dependencies": [],
+                                    "required": false,
+                                    "id": "",
+                                    "hackoladeMeta": {},
+                                    "error": {
+                                        "name": false
+                                    }
                                 }
                             ],
                             "dependencies": [],
@@ -2875,6 +2882,32 @@
                     }
                 },
                 {
+                    "type": "objectId",
+                    "format": "",
+                    "primaryKey": false,
+                    "relationshipType": "Foreign Key",
+                    "parentRelationship": "1cc36b20-f571-11ea-bd96-cde8cae0469c",
+                    "childRelationships": [],
+                    "foreignCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "foreignField": [
+                        "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                        "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                    ],
+                    "sample": "",
+                    "GUID": "16b917c0-f571-11ea-bd96-cde8cae0469c",
+                    "name": "authorId",
+                    "code": "",
+                    "description": "ObjectId of the user who sent the message",
+                    "comments": "",
+                    "dependencies": [],
+                    "required": true,
+                    "id": "",
+                    "hackoladeMeta": {},
+                    "error": {
+                        "name": false
+                    }
+                },
+                {
                     "type": "string",
                     "minLength": "",
                     "maxLength": "",
@@ -2927,22 +2960,6 @@
                     "error": {
                         "name": false
                     }
-                },
-                {
-                    "GUID": "967091e0-efaa-11ea-a722-4d53fdda74f6",
-                    "name": "author",
-                    "type": "reference",
-                    "$ref": "#model/definitions/author",
-                    "refType": "model",
-                    "ref": "ce5f8570-811e-11ea-a764-5d61b98a5ce8",
-                    "refIdPath": [
-                        "6b45e040-7fae-11ea-ba73-c97a35e85484",
-                        "6b460750-7fae-11ea-ba73-c97a35e85484",
-                        "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
-                    ],
-                    "required": true,
-                    "code": "",
-                    "primaryKey": false
                 },
                 {
                     "type": "string",
@@ -3145,7 +3162,7 @@
             "description": "Relation between an User and an Organization created by him/her. Initially projected as 1-N, with only one User owning the Organization, it is though to later on be evolved into N-N, with many Users being able to manage the Organization with different roles.",
             "comments": "",
             "relationshipType": "Foreign Key",
-            "parentCollection": null,
+            "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
             "parentField": [
                 [
                     "efec04b0-7fb2-11ea-ba73-c97a35e85484",
@@ -3153,13 +3170,13 @@
                 ]
             ],
             "parentCardinality": "1",
-            "childCollection": "68a89cd0-8132-11ea-a764-5d61b98a5ce8",
+            "childCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
             "childField": [
                 [
-                    "68a89cd0-8132-11ea-a764-5d61b98a5ce8",
-                    "f6ed4180-82ef-11ea-821a-a1813ece7f73",
-                    "bf6dcc20-82ef-11ea-821a-a1813ece7f73",
-                    "b4066f90-8132-11ea-a764-5d61b98a5ce8"
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "5f2b2880-82ef-11ea-821a-a1813ece7f73",
+                    "a43c95d0-82ef-11ea-821a-a1813ece7f73",
+                    "09b06ae5-82f0-11ea-821a-a1813ece7f73"
                 ]
             ],
             "childCardinality": "n",
@@ -3209,7 +3226,9 @@
             "childField": [
                 [
                     "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
-                    "deadb930-8108-11ea-a764-5d61b98a5ce8"
+                    "e79df740-82f1-11ea-821a-a1813ece7f73",
+                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8",
+                    "96938d21-7fb2-11ea-ba73-c97a35e85484"
                 ]
             ],
             "childCardinality": "1"
@@ -3279,6 +3298,29 @@
                 [
                     "da312720-efa8-11ea-a722-4d53fdda74f6",
                     "8340c400-efaa-11ea-a722-4d53fdda74f6"
+                ]
+            ],
+            "childCardinality": "1"
+        },
+        {
+            "GUID": "1cc36b20-f571-11ea-bd96-cde8cae0469c",
+            "name": "UserSentMessage",
+            "description": "",
+            "comments": "",
+            "relationshipType": "Foreign Key",
+            "parentCollection": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+            "parentField": [
+                [
+                    "efec04b0-7fb2-11ea-ba73-c97a35e85484",
+                    "fa469f60-7fb2-11ea-ba73-c97a35e85484"
+                ]
+            ],
+            "parentCardinality": "1",
+            "childCollection": "da312720-efa8-11ea-a722-4d53fdda74f6",
+            "childField": [
+                [
+                    "da312720-efa8-11ea-a722-4d53fdda74f6",
+                    "16b917c0-f571-11ea-bd96-cde8cae0469c"
                 ]
             ],
             "childCardinality": "1"
@@ -3388,12 +3430,9 @@
         "e6c8e090-efa8-11ea-a722-4d53fdda74f6": "_id",
         "038e9990-efa9-11ea-a722-4d53fdda74f6": "updatedAt",
         "79ee8e10-efa9-11ea-a722-4d53fdda74f6": "participants",
-        "b7b90950-efa9-11ea-a722-4d53fdda74f6": "newMessages",
         "5df35b90-efaa-11ea-a722-4d53fdda74f6": "createdAt",
-        "70677a90-efaa-11ea-a722-4d53fdda74f6": "content",
         "8340c400-efaa-11ea-a722-4d53fdda74f6": "threadId",
         "8ad49d90-efaa-11ea-a722-4d53fdda74f6": "ThreadHasMessages",
-        "967091e0-efaa-11ea-a722-4d53fdda74f6": "author",
         "a8b9b700-efaf-11ea-a722-4d53fdda74f6": "lastAccess",
         "d117efa0-efb4-11ea-a722-4d53fdda74f6": "postRef",
         "dd9961f0-efb4-11ea-a722-4d53fdda74f6": "id",
@@ -3404,9 +3443,14 @@
         "f8e828d0-efa8-11ea-a722-4d53fdda74f6": "createdAt",
         "3e9cbe80-efaa-11ea-a722-4d53fdda74f6": "_id",
         "65208410-efaa-11ea-a722-4d53fdda74f6": "updatedAt",
-        "4f0ec160-efa9-11ea-a722-4d53fdda74f6": "status",
         "aa756300-efaa-11ea-a722-4d53fdda74f6": "status",
-        "be42a860-efb5-11ea-a722-4d53fdda74f6": "postRef"
+        "be42a860-efb5-11ea-a722-4d53fdda74f6": "postRef",
+        "4f0ec160-efa9-11ea-a722-4d53fdda74f6": "status",
+        "b7b90950-efa9-11ea-a722-4d53fdda74f6": "newMessages",
+        "70677a90-efaa-11ea-a722-4d53fdda74f6": "content",
+        "eb4659e0-f570-11ea-bd96-cde8cae0469c": "photo",
+        "1cc36b20-f571-11ea-bd96-cde8cae0469c": "UserSentMessage",
+        "16b917c0-f571-11ea-bd96-cde8cae0469c": "authorId"
     },
     "definitions": {
         "type": "definitions",
@@ -3669,12 +3713,6 @@
                     [
                         "05136460-84b7-11ea-8f4d-0b62bb8cf8ca",
                         "e6c7e3d0-84b8-11ea-8f4d-0b62bb8cf8ca"
-                    ],
-                    [
-                        "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
-                        "79ee8e10-efa9-11ea-a722-4d53fdda74f6",
-                        "aaa9fd00-efa9-11ea-a722-4d53fdda74f6",
-                        "adce9595-efa9-11ea-a722-4d53fdda74f6"
                     ]
                 ]
             },
@@ -3803,10 +3841,6 @@
                     [
                         "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
                         "e79df740-82f1-11ea-821a-a1813ece7f73"
-                    ],
-                    [
-                        "da312720-efa8-11ea-a722-4d53fdda74f6",
-                        "967091e0-efaa-11ea-a722-4d53fdda74f6"
                     ],
                     [
                         "6b45e040-7fae-11ea-ba73-c97a35e85484",
@@ -4009,7 +4043,7 @@
                         "GUID": "bd34fec0-7fb0-11ea-ba73-c97a35e85484",
                         "x": 401.78396964453475,
                         "y": 973.479274540822,
-                        "width": 312,
+                        "width": 279,
                         "height": 324,
                         "color": {
                             "hsl": {
@@ -4069,7 +4103,7 @@
                         "GUID": "efec04b0-7fb2-11ea-ba73-c97a35e85484",
                         "x": 396.0025658084545,
                         "y": 80,
-                        "width": 326,
+                        "width": 347,
                         "height": 786,
                         "color": {
                             "hsl": {
@@ -4129,7 +4163,7 @@
                         "GUID": "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
                         "x": 1279.144643191476,
                         "y": 487.7155300718321,
-                        "width": 301,
+                        "width": 251,
                         "height": 198,
                         "color": {
                             "hsl": {
@@ -4159,8 +4193,8 @@
                         "GUID": "da312720-efa8-11ea-a722-4d53fdda74f6",
                         "x": 1313.5523390468857,
                         "y": 147,
-                        "width": 252,
-                        "height": 267,
+                        "width": 231,
+                        "height": 211,
                         "color": {
                             "hsl": {
                                 "h": 15,
@@ -4357,16 +4391,30 @@
                     "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
                 ],
                 [
-                    "da312720-efa8-11ea-a722-4d53fdda74f6",
-                    "be42a860-efb5-11ea-a722-4d53fdda74f6",
-                    "d117efa0-efb4-11ea-a722-4d53fdda74f6"
-                ],
-                [
                     "88a1c9f0-efa8-11ea-a722-4d53fdda74f6",
                     "79ee8e10-efa9-11ea-a722-4d53fdda74f6",
                     "aaa9fd00-efa9-11ea-a722-4d53fdda74f6",
                     "adce9595-efa9-11ea-a722-4d53fdda74f6",
                     "efec52d4-7fb2-11ea-ba73-c97a35e85484"
+                ],
+                [
+                    "da312720-efa8-11ea-a722-4d53fdda74f6",
+                    "be42a860-efb5-11ea-a722-4d53fdda74f6",
+                    "d117efa0-efb4-11ea-a722-4d53fdda74f6",
+                    "b6ab7370-efb5-11ea-a722-4d53fdda74f6",
+                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
+                ],
+                [
+                    "da312720-efa8-11ea-a722-4d53fdda74f6",
+                    "967091e0-efaa-11ea-a722-4d53fdda74f6",
+                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
+                ],
+                [
+                    "da312720-efa8-11ea-a722-4d53fdda74f6",
+                    "be42a860-efb5-11ea-a722-4d53fdda74f6",
+                    "d117efa0-efb4-11ea-a722-4d53fdda74f6",
+                    "b6ab7370-efb5-11ea-a722-4d53fdda74f6",
+                    "ce5f8570-811e-11ea-a764-5d61b98a5ce8"
                 ]
             ],
             "details": true,

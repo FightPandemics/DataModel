@@ -15,7 +15,6 @@ var thread = new Schema({
         type: String,
         default: "pending",
         enum: [
-            "deleted",
             "blocked",
             "accepted",
             "pending",
@@ -37,7 +36,6 @@ var thread = new Schema({
                 type: String,
                 required: true
             },
-            location: location,
             newMessages: {
                 type: Boolean,
                 default: false,
@@ -46,6 +44,9 @@ var thread = new Schema({
             lastAccess: {
                 type: Date,
                 required: true
+            },
+            photo: {
+                type: String
             }
         })
     ]

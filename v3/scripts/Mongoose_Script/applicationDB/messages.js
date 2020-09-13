@@ -11,6 +11,10 @@ var messages = new Schema({
         type: Date,
         required: true
     },
+    authorId: {
+        type: Schema.Types.ObjectId,
+        required: true
+    },
     content: {
         type: String,
         required: true
@@ -19,7 +23,6 @@ var messages = new Schema({
         type: Schema.Types.ObjectId,
         required: true
     },
-    author: author,
     status: {
         type: String,
         default: "sent",

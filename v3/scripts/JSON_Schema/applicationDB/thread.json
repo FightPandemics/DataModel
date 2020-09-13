@@ -21,10 +21,9 @@
         },
         "status": {
             "type": "string",
-            "description": "Curerent thread status, used to define archives, soft deletes and other conversation status. The statuses are:\n\n* **pending**: if the user didn't accept the message request yet\n* **blocked**: if the one of the user's blocked the other\n* **accepted**: message request was accepted and users exchange messages\n* **archived**: user archived the message thread\n* **deleted**: user deleted the conversation",
+            "description": "Curerent thread status, used to define archives, soft deletes and other conversation status. The statuses are:\n\n* **pending**: if the user didn't accept the message request yet\n* **blocked**: if the one of the user's blocked the other\n* **accepted**: message request was accepted and users exchange messages\n* **archived**: user archived the message thread\n",
             "default": "pending",
             "enum": [
-                "deleted",
                 "blocked",
                 "accepted",
                 "pending",
@@ -53,66 +52,6 @@
                         "type": "string",
                         "description": "User's type"
                     },
-                    "location": {
-                        "type": "object",
-                        "properties": {
-                            "coordinates": {
-                                "type": "array",
-                                "additionalItems": true,
-                                "minItems": 2,
-                                "maxItems": 2,
-                                "uniqueItems": false,
-                                "description": "Array with the coordinates, specifying **longitude first** and **latitude second**, as default in the [GeoJSON](https://docs.mongodb.com/manual/reference/geojson/) definition.",
-                                "items": [
-                                    {
-                                        "type": "number",
-                                        "minimum": -180,
-                                        "maximum": 180,
-                                        "default": 0,
-                                        "description": "Location longitude\n",
-                                        "id": "lng"
-                                    },
-                                    {
-                                        "type": "number",
-                                        "minimum": -90,
-                                        "maximum": 90,
-                                        "default": 0,
-                                        "description": "Location latitude\n",
-                                        "id": "lat"
-                                    }
-                                ]
-                            },
-                            "type": {
-                                "type": "string",
-                                "enum": [
-                                    "Point"
-                                ],
-                                "description": "Type of the GeoJSON Object.\nPlease refer to the [official documentation](https://docs.mongodb.com/manual/reference/geojson/ ) for more information.\n\n**In our case, the value will always be of the type \"Point\".**"
-                            },
-                            "country": {
-                                "type": "string",
-                                "description": "String holding the country's name.\n"
-                            },
-                            "city": {
-                                "type": "string",
-                                "description": "String holding the city's name."
-                            },
-                            "neighborhood": {
-                                "type": "string",
-                                "description": "String holding the neighborhood's name."
-                            },
-                            "address": {
-                                "type": "string",
-                                "description": "String holding the address (street, number and other details)."
-                            }
-                        },
-                        "additionalProperties": false,
-                        "description": "Location document according to the norms of a [GeoJSON Object](https://docs.mongodb.com/manual/reference/geojson/ ).\nThe fields address, neighborhood, city, state and country are added to store the result of the geoprocessing.",
-                        "required": [
-                            "coordinates",
-                            "type"
-                        ]
-                    },
                     "newMessages": {
                         "type": "boolean",
                         "description": "Flag to indicate whether there are new messages since last time the user accessed the thread.",
@@ -122,6 +61,11 @@
                         "type": "string",
                         "description": "Timestamp with the last time the user accessed the message thread.",
                         "format": "date-time"
+                    },
+                    "photo": {
+                        "type": "string",
+                        "description": "URL with the user photo",
+                        "format": "uri"
                     }
                 },
                 "additionalProperties": false,
@@ -129,7 +73,6 @@
                     "id",
                     "name",
                     "type",
-                    "location",
                     "newMessages",
                     "lastAccess"
                 ]

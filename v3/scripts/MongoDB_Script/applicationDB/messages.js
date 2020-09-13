@@ -24,6 +24,10 @@ db.createCollection( "messages",{
                     "bsonType": "date",
                     "description": "Timestamp with message's update date"
                 },
+                "authorId": {
+                    "bsonType": "objectId",
+                    "description": "ObjectId of the user who sent the message"
+                },
                 "content": {
                     "bsonType": "string",
                     "description": "Messages content, containing html links and emojis "
@@ -31,83 +35,6 @@ db.createCollection( "messages",{
                 "threadId": {
                     "bsonType": "objectId",
                     "description": "Reference to the thread were the message was sent"
-                },
-                "author": {
-                    "bsonType": "object",
-                    "properties": {
-                        "id": {
-                            "bsonType": "objectId",
-                            "description": "Foreign key to the user who created the post."
-                        },
-                        "name": {
-                            "bsonType": "string"
-                        },
-                        "type": {
-                            "bsonType": "string"
-                        },
-                        "location": {
-                            "bsonType": "object",
-                            "description": "Location document according to the norms of a [GeoJSON Object](https://docs.mongodb.com/manual/reference/geojson/ ).\nThe fields address, neighborhood, city, state and country are added to store the result of the geoprocessing.",
-                            "properties": {
-                                "coordinates": {
-                                    "bsonType": "array",
-                                    "description": "Array with the coordinates, specifying **longitude first** and **latitude second**, as default in the [GeoJSON](https://docs.mongodb.com/manual/reference/geojson/) definition.",
-                                    "additionalItems": true,
-                                    "minItems": 2,
-                                    "maxItems": 2,
-                                    "uniqueItems": false,
-                                    "items": [
-                                        {
-                                            "bsonType": "number",
-                                            "description": "Location longitude\n",
-                                            "minimum": -180,
-                                            "maximum": 180
-                                        },
-                                        {
-                                            "bsonType": "number",
-                                            "description": "Location latitude\n",
-                                            "minimum": -90,
-                                            "maximum": 90
-                                        }
-                                    ]
-                                },
-                                "type": {
-                                    "bsonType": "string",
-                                    "description": "Type of the GeoJSON Object.\nPlease refer to the [official documentation](https://docs.mongodb.com/manual/reference/geojson/ ) for more information.\n\n**In our case, the value will always be of the type \"Point\".**",
-                                    "enum": [
-                                        "Point"
-                                    ]
-                                },
-                                "country": {
-                                    "bsonType": "string",
-                                    "description": "String holding the country's name.\n"
-                                },
-                                "city": {
-                                    "bsonType": "string",
-                                    "description": "String holding the city's name."
-                                },
-                                "neighborhood": {
-                                    "bsonType": "string",
-                                    "description": "String holding the neighborhood's name."
-                                },
-                                "address": {
-                                    "bsonType": "string",
-                                    "description": "String holding the address (street, number and other details)."
-                                }
-                            },
-                            "additionalProperties": false,
-                            "required": [
-                                "coordinates",
-                                "type"
-                            ]
-                        }
-                    },
-                    "additionalProperties": false,
-                    "required": [
-                        "id",
-                        "name",
-                        "type"
-                    ]
                 },
                 "status": {
                     "bsonType": "string",
@@ -233,9 +160,9 @@ db.createCollection( "messages",{
                 "_id",
                 "createdAt",
                 "updatedAt",
+                "authorId",
                 "content",
                 "threadId",
-                "author",
                 "status"
             ]
         }
